@@ -1,60 +1,76 @@
-import os
-import pandas as pd
-from datetime import datetime, timedelta
-import MetaTrader5 as mt5
 from dotenv import load_dotenv, find_dotenv
+from datetime import datetime, timedelta
+import pandas as pd
+import MetaTrader5 as mt5
+import os
 
-load_dotenv(find_dotenv())
 
-mt5_login = os.getenv("MT5_LOGIN")
-mt5_password = os.getenv("MT5_PASSWORD")
-mt5_server = os.getenv("MT5_SERVER")
+def load_credentials():
+    """Load MT5 credentials from .env file."""
+    load_dotenv(find_dotenv())
+    login = os.getenv("MT5_LOGIN")
+    password = os.getenv("MT5_PASSWORD")
+    server = os.getenv("MT5_SERVER")
+    if not login or not password or not server:
+        print("Missing credentials in .env file.")
+        exit(1)
+    return login, password, server
 
-if not mt5_login or not mt5_password or not mt5_server:
-    print("Missing credentials in .env file.")
-    exit(1)
 
-initialize = mt5.initialize(login=int(mt5_login), password=mt5_password, server=mt5_login)
-
-if not initialize:
-    print("initialize() failed")
-    mt5.shutdown()
-    exit()
-else:
+def initialize_mt5(login, password, server):
+    """Initialize MT5 connection."""
+    if not mt5.initialize(login=int(login), password=password, server=server):
+        print("initialize() failed")
+        mt5.shutdown()
+        exit()
     print("initialize() succeeded")
 
-instruments_list = ["PETR4", "VALE3", "ITUB4"]
-date_to = datetime.now()
-date_from = date_to - timedelta(days=365)
+
+def create_save_directory(folder_name="instrument_series"):
+    """Create folder in project root to save CSV files."""
+    root_dir = os.getcwd()
+    save_path = os.path.join(root_dir, folder_name)
+    os.makedirs(save_path, exist_ok=True)
+    print(f"Directory ready: {save_path}")
+    return save_path
 
 
-save_path = r"\instrument-similarity-analysis\data"
+def fetch_and_save_ticks(symbol, date_from, date_to, save_path):
+    """Fetch tick data for a symbol and save to CSV."""
+    print(f"Fetching data for {symbol}...", flush=True)
 
-os.makedirs(save_path, exist_ok=True)
-
-for instrument in instruments_list:
-    print(f"Fetching data for {instrument}...")
-
-    ticks = mt5.copy_ticks_range(
-        instrument,
-        date_from,
-        date_to,
-        mt5.COPY_TICKS_TRADE
-    )
-
-    if ticks is None or len(ticks) == 0:
-        print(f"No tick data for {instrument}")
-        continue
-
+    ticks = mt5.copy_ticks_range(symbol, date_from, date_to, mt5.COPY_TICKS_TRADE)
     df = pd.DataFrame(ticks)
 
+    if df.empty:
+        print(f"No tick data for {symbol}", flush=True)
+        return
+
+    print(f"Formatting dataframe for {symbol}", flush=True)
     df['time'] = pd.to_datetime(df['time'], unit='s')
 
-    file_path = os.path.join(save_path, f"{instrument}_ticks.csv")
+    print(f"Saving {symbol}_ticks.csv", flush=True)
+    file_path = os.path.join(save_path, f"{symbol}_ticks.csv")
     df.to_csv(file_path, index=False)
+    print(f"Saved {len(df)} rows for {symbol} → {file_path}")
 
-    print(f"Saved {len(df)} rows for {instrument} → {file_path}")
 
-mt5.shutdown()
-print("\nAll done. MT5 connection closed. Data retrieval complete.")
+def main():
+    # Load credentials and initialize MT5
+    login, password, server = load_credentials()
+    initialize_mt5(login, password, server)
 
+    instruments_list = ["PETR4", "VALE3", "ITUB4", "BBDC4", "WEGE3"]
+    date_to = datetime.now()
+    date_from = date_to - timedelta(days=365)
+    save_path = create_save_directory()
+
+    for symbol in instruments_list:
+        fetch_and_save_ticks(symbol, date_from, date_to, save_path)
+
+    mt5.shutdown()
+    print("All done. MT5 connection closed. Data retrieval complete.")
+
+
+if __name__ == "__main__":
+    main()
