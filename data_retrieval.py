@@ -47,7 +47,16 @@ def fetch_and_save_ticks(symbol, date_from, date_to, save_path):
         return
 
     print(f"Formatting dataframe for {symbol}", flush=True)
+
+    # Convert 'time' column to datetime
     df['time'] = pd.to_datetime(df['time'], unit='s')
+
+    # Add a new column 'instrument' with the symbol repeated
+    df['instrument'] = symbol
+
+    # Keep only the desired columns
+    df = df[['instrument', 'time', 'last']]
+    print(f"Saving {symbol}_ticks.csv", flush=True)
 
     print(f"Saving {symbol}_ticks.csv", flush=True)
     file_path = os.path.join(save_path, f"{symbol}_ticks.csv")
