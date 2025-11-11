@@ -1,6 +1,3 @@
-
-
-import glob
 import os
 import sys
 import time
@@ -12,189 +9,156 @@ warnings.filterwarnings('ignore')
 
 
 # ============================================================================
-# STEP 1: DATA TRANSFORMATION FUNCTIONS
+# STEP 1: CORRELATION ANALYSIS FUNCTIONS
 # ============================================================================
 
-def extract_symbol_from_filename(filename):
-    """Extract symbol from filename like 'ABEV3_ticks.csv' -> 'ABEV3'"""
-    basename = os.path.basename(filename)
-    return basename.replace('_ticks.csv', '')
-
-
-def load_and_transform_file(csv_path):
-    """Load a single CSV file and apply transformations with trading hours filter"""
-    symbol = extract_symbol_from_filename(csv_path)
-    
-    print(f"Processing {symbol}...", end=" ")
-    
-    # Load data
-    df = pd.read_csv(csv_path)
-    
-    # Convert to timestamp using millisecond precision
-    df['datetime'] = pd.to_datetime(df['time_msc'], unit='ms')
-    
-    # Extract hour for filtering
-    df['hour'] = df['datetime'].dt.hour
-    
-    # Filter for trading hours: 10:00 AM to 5:00 PM (17:00)
-    trading_hours_mask = (df['hour'] >= 10) & (df['hour'] < 17)
-    df = df[trading_hours_mask].copy()
-    
-    # Add instrument column
-    df['instrument'] = symbol
-    
-    # Set datetime as index
-    df = df.set_index('datetime')
-    
-    # Apply forward fill and backward fill
-    df = df.ffill().bfill()
-    
-    # Keep only datetime (index), last, and instrument columns
-    df = df[['instrument', 'last']]
-    
-    print(f"✅ {len(df):,} rows")
-    
-    return df
-
-
-def transform_all_files(dataset_folder='dataset', output_folder='clean_dataset/instrument_series'):
-    """Transform all CSV files and save to individual files"""
-    # Get list of all CSV files
-    csv_files = glob.glob(os.path.join(dataset_folder, '*.csv'))
-    
-    print(f"Found {len(csv_files)} CSV files")
-    print(f"Processing all files...\n")
-    
-    # Create output directory
-    os.makedirs(output_folder, exist_ok=True)
-    
-    for i, csv_file in enumerate(csv_files, 1):
-        try:
-            df = load_and_transform_file(csv_file)
-            
-            # Extract instrument name and save
-            symbol = extract_symbol_from_filename(csv_file)
-            output_file = os.path.join(output_folder, f'{symbol}_transformed.csv')
-            df.to_csv(output_file)
-            
-            # Progress indicator
-            if i % 10 == 0:
-                print(f"\nProcessed and saved {i}/{len(csv_files)} files...")
-                
-        except Exception as e:
-            print(f"❌ Error processing {os.path.basename(csv_file)}: {str(e)}")
-    
-    print(f"\n✅ Successfully processed and saved {len(csv_files)} files to '{output_folder}/'")
-    return output_folder
-
-
-# ============================================================================
-# STEP 2: CORRELATION ANALYSIS FUNCTIONS
-# ============================================================================
-
-def load_instrument_data(instrument, data_folder='clean_dataset/instrument_series'):
+def load_instrument_data(instrument, data_folder='transformed_data/instrument_series'):
     """Load transformed data for a single instrument."""
     csv_path = os.path.join(data_folder, f'{instrument}_transformed.csv')
-    
+
     if not os.path.exists(csv_path):
         raise FileNotFoundError(f"File not found: {csv_path}")
-    
+
     # Load data
     df = pd.read_csv(csv_path)
-    
+
     # Convert datetime column to datetime type
     df['datetime'] = pd.to_datetime(df['datetime'])
-    
+
     # Set datetime as index
     df = df.set_index('datetime')
-    
+
     # Sort index to ensure it's monotonic
     df = df.sort_index()
-    
+
     # Keep only last price
     df = df[['last']]
-    
-    return df
 
-
-def _ensure_unique_index(df):
-    """Ensure datetime index is unique by aggregating duplicates with last()."""
-    if df.index.has_duplicates:
-        df = df.groupby(level=0).last()
     return df
 
 
 def resample_and_fill(df, frequency):
     """
-    Resample dataframe by frequency and forward fill.
+    Resample dataframe by frequency.
     
     Frequency mapping:
     - '1ms' -> Aggregate duplicate timestamps at ms level
     - '1S' -> '1S' (seconds)
     - '1T' -> '1T' (minutes)
-    - '1H' -> '1H' (hours)
-    - '1D' -> '1D' (days)
+    
+    Note: We do NOT ffill here anymore. We want to keep NaNs for 'quiet' periods
+    so we can drop them later if neither instrument traded (matching 1ms logic).
     """
-    # For 1ms, aggregate duplicates to ensure unique index
+    # For 1ms, data is already deduplicated in ETL
     if frequency == '1ms':
-        return _ensure_unique_index(df)
-    
+        return df
+
     # Resample and take last value in each period
+    # This creates a continuous grid (including nights/weekends) with NaNs where no data exists
     df_resampled = df.resample(frequency).last()
-    
-    # Forward fill missing values
-    df_resampled = df_resampled.ffill()
-    
+
+    # Filter back to trading hours only (10:00 - 17:00)
+    # This removes the overnight/weekend rows generated by resample()
+    is_trading_hours = (df_resampled.index.hour >= 10) & (df_resampled.index.hour < 17)
+    df_resampled = df_resampled[is_trading_hours]
+
     return df_resampled
 
 
-def calculate_correlation_with_timing(instrument1, instrument2, frequency, correlation_method):
+def calculate_correlation_with_timing(instrument1, instrument2, frequency, correlation_method,
+                                      data_folder='transformed_data/instrument_series'):
     """
     Calculate correlation between two instruments with timing.
     
     Returns:
     --------
-    tuple: (correlation_value, execution_time_seconds)
+    tuple: (correlation_value, execution_time_seconds, metrics_dict)
     """
+    metrics = {
+        'len1_raw': 0, 'len2_raw': 0,
+        'len1_resampled': 0, 'len2_resampled': 0,
+        'len_corr_matrix': 0
+    }
+
     try:
         # Start timing
         start_time = time.time()
-        
+
         # Load both instruments from transformed files
-        df1 = load_instrument_data(instrument1)
-        df2 = load_instrument_data(instrument2)
-        
+        df1 = load_instrument_data(instrument1, data_folder=data_folder)
+        df2 = load_instrument_data(instrument2, data_folder=data_folder)
+
+        metrics['len1_raw'] = len(df1)
+        metrics['len2_raw'] = len(df2)
+
         # Resample both by the specified frequency
         df1_resampled = resample_and_fill(df1, frequency)
         df2_resampled = resample_and_fill(df2, frequency)
-        
-        # Ensure both indices are unique (defensive check)
-        df1_resampled = _ensure_unique_index(df1_resampled)
-        df2_resampled = _ensure_unique_index(df2_resampled)
-        
-        # Concatenate the two series side by side
+
+        metrics['len1_resampled'] = len(df1_resampled)
+        metrics['len2_resampled'] = len(df2_resampled)
+
+        # -------------------------------------------------------
+        # ENFORCE COMMON TIME WINDOW (INTERSECTION)
+        # -------------------------------------------------------
+        # Find the latest start time and earliest end time
+        start_common = max(df1_resampled.index.min(), df2_resampled.index.min())
+        end_common = min(df1_resampled.index.max(), df2_resampled.index.max())
+
+        # Filter both to this common window
+        df1_resampled = df1_resampled[(df1_resampled.index >= start_common) & (df1_resampled.index <= end_common)]
+        df2_resampled = df2_resampled[(df2_resampled.index >= start_common) & (df2_resampled.index <= end_common)]
+
+        # -------------------------------------------------------
+        # SYNCHRONIZE TICKS
+        # -------------------------------------------------------
+        # Concatenate the two series side by side (Outer Join on Index)
         df_combined = pd.concat([df1_resampled, df2_resampled], axis=1)
         df_combined.columns = ['last_1', 'last_2']
-        
-        # Drop rows with any NaN values
-        df_combined = df_combined.dropna()
-        
+
+        # Remove "quiet" periods where NEITHER instrument traded
+        # For 1ms: This is redundant (outer join of sparse data won't have all-NaN rows)
+        # For 1T/1S: This removes the minutes/seconds where no trades happened (NaNs)
+        df_combined = df_combined.dropna(how='all')
+
+        # Forward fill to synchronize ticks
+        # If Inst1 trades at t1, use Inst2's last price at or before t1
+        df_combined = df_combined.ffill().bfill()
+
+        # Check for remaining NaNs (should be 0)
+        nan_count = df_combined.isna().sum().sum()
+        print(f"Remaining NaNs after fill: {nan_count}")
+
+        metrics['len_corr_matrix'] = len(df_combined)
+
+        print(
+            f"Metrics for {frequency}: Raw[{metrics['len1_raw']}, {metrics['len2_raw']}] -> Resampled[{metrics['len1_resampled']}, {metrics['len2_resampled']}] -> CorrMatrix[{metrics['len_corr_matrix']}]")
+
         # Need at least 2 points to calculate correlation
         if len(df_combined) < 2:
-            return None, time.time() - start_time
-        
+            return None, time.time() - start_time, metrics
+
         # Calculate correlation using pandas corr method
+        # Measure pure correlation calculation time
+        calc_start = time.time()
         correlation_value = df_combined['last_1'].corr(df_combined['last_2'], method=correlation_method)
-        
+        calc_end = time.time()
+
+        metrics['correlation_time_seconds'] = calc_end - calc_start
+
+        print(f"Pandas {correlation_method} correlation: {correlation_value}")
+
+        metrics['weighted_correlation'] = None
+
         # End timing
         end_time = time.time()
         execution_time = end_time - start_time
-        
-        return correlation_value, execution_time
-        
+
+        return correlation_value, execution_time, metrics
+
     except Exception as e:
         print(f"Error: {str(e)}")
-        return None, time.time() - start_time
+        return None, time.time() - start_time, metrics
 
 
 # ============================================================================
@@ -203,23 +167,24 @@ def calculate_correlation_with_timing(instrument1, instrument2, frequency, corre
 
 def test_mock():
     """
-    Test function with mock data.
-    Simulates processing: CPLE6,ITSA4,1Year,1ms,spearman,8
+    Test function with mock data using VALE3 and PETR4.
     """
-    # Mock CSV line
-    mock_csv_line = "CPLE6,ITSA4,1Year,1ms,spearman,8"
+    print("Running Mock Test (VALE3 vs PETR4)...")
 
-    # Process the mock line
-    result = process_single_line(mock_csv_line)
+    # Run test: 1 Hour frequency
+    # Note: '1Day' is just a label here, the code processes the intersection of available data
+    mock_csv_line = "VALE3,PETR4,1Day,1H,pearson,1"
+    process_single_line(mock_csv_line)
 
-    return result
+    print("Mock Test Completed.")
 
 
 # ============================================================================
 # SINGLE LINE PROCESSING
 # ============================================================================
 
-def process_single_line(csv_line, output_file='correlation_results.csv'):
+def process_single_line(csv_line, output_file='correlation_results.csv',
+                        data_folder='transformed_data/instrument_series'):
     """
     Process a single CSV line with correlation parameters.
     
@@ -230,6 +195,8 @@ def process_single_line(csv_line, output_file='correlation_results.csv'):
         Example: CPLE6,ITSA4,1Year,1ms,spearman,8
     output_file : str
         Output CSV file to append results
+    data_folder : str
+        Folder containing the transformed instrument data
     
     Returns:
     --------
@@ -237,20 +204,20 @@ def process_single_line(csv_line, output_file='correlation_results.csv'):
     """
     # Parse the CSV line
     parts = csv_line.strip().split(',')
-    
+
     if len(parts) != 6:
         raise ValueError(f"Invalid CSV line format. Expected 6 fields, got {len(parts)}")
-    
+
     instrument1, instrument2, period, frequency, correlation_method, repeat = parts
-    
+
     # Log start
     print(f"Processing: {instrument1},{instrument2},{period},{frequency},{correlation_method},{repeat}")
-    
+
     # Calculate correlation
-    corr_value, exec_time = calculate_correlation_with_timing(
-        instrument1, instrument2, frequency, correlation_method
+    corr_value, exec_time, metrics = calculate_correlation_with_timing(
+        instrument1, instrument2, frequency, correlation_method, data_folder=data_folder
     )
-    
+
     # Prepare result
     result = {
         'instrument1': instrument1,
@@ -260,12 +227,19 @@ def process_single_line(csv_line, output_file='correlation_results.csv'):
         'correlation_method': correlation_method,
         'repeat': int(repeat),
         'correlation_value': corr_value,
-        'execution_time_seconds': exec_time
+        'execution_time_seconds': exec_time,
+        'correlation_time_seconds': metrics.get('correlation_time_seconds'),
+        'len1_raw': metrics['len1_raw'],
+        'len2_raw': metrics['len2_raw'],
+        'len1_resampled': metrics['len1_resampled'],
+        'len2_resampled': metrics['len2_resampled'],
+        'len_corr_matrix': metrics['len_corr_matrix'],
+        'weighted_correlation': metrics.get('weighted_correlation')
     }
-    
+
     # Save to CSV (append if exists)
     df_result = pd.DataFrame([result])
-    
+
     # Check if file exists
     if os.path.exists(output_file):
         # Append without header
@@ -273,10 +247,10 @@ def process_single_line(csv_line, output_file='correlation_results.csv'):
     else:
         # Create new file with header
         df_result.to_csv(output_file, mode='w', header=True, index=False)
-    
+
     # Log finish
     print(f"Finished: correlation={corr_value}, time={exec_time:.4f}s, saved to {output_file}")
-    
+
     return result
 
 
@@ -284,35 +258,84 @@ def process_single_line(csv_line, output_file='correlation_results.csv'):
 # MAIN EXECUTION
 # ============================================================================
 
+import argparse
+
+
 def main():
     """
     Main execution function.
-    
-    Usage:
-        python correlation_analysis.py "CPLE6,ITSA4,1Year,1ms,spearman,8"
-        python correlation_analysis.py --test    # Run mock test
-    
-    The CSV line must contain: instrument1,instrument2,period,frequency,correlation,repeat
+    Supports two modes:
+    1. Single Line Mode: python correlation_analysis.py "instrument1,instrument2,..." --data-dir ...
+    2. Batch Mode: python correlation_analysis.py <data_dir> <input_csv> <output_csv>
     """
+    # Check for Batch Mode (3 positional arguments)
+    if len(sys.argv) == 4 and not sys.argv[1].startswith('--'):
+        data_dir = sys.argv[1]
+        input_file = sys.argv[2]
+        output_file = sys.argv[3]
 
-    # CSV line must be provided as command line parameter
-    if len(sys.argv) < 2:
+        print(f"Running Batch Mode:")
+        print(f"  Data: {data_dir}")
+        print(f"  Input: {input_file}")
+        print(f"  Output: {output_file}")
+
+        if not os.path.exists(input_file):
+            print(f"Error: Input file '{input_file}' not found.")
+            sys.exit(1)
+
+        with open(input_file, 'r') as f:
+
+            lines = f.readlines()
+
+        # Skip header if present
+        if lines and 'instrument1' in lines[0]:
+            data_lines = lines[1:]
+        else:
+            data_lines = lines
+
+        total = len(data_lines)
+        print(f"Found {total} combinations to process.")
+
+        for i, line in enumerate(data_lines, 1):
+            line = line.strip()
+            if not line:
+                continue
+
+            if i % 10 == 0:
+                print(f"Processing {i}/{total}...")
+
+            try:
+                process_single_line(line, output_file=output_file, data_folder=data_dir)
+            except Exception as e:
+                print(f"Error processing line {i}: {e}")
+
+        print("Batch processing complete.")
+        return
+
+    # Single Line Mode (Standard Argparse)
+    parser = argparse.ArgumentParser(description='Calculate correlation for a single pair.')
+    parser.add_argument('csv_line', nargs='?', help='CSV line with parameters')
+    parser.add_argument('--test', action='store_true', help='Run mock test')
+    parser.add_argument('--data-dir', default='transformed_data/instrument_series', help='Path to transformed data')
+    parser.add_argument('--output', default='correlation_results.csv', help='Output CSV file')
+    
+    args = parser.parse_args()
+    
+    if args.test:
+        test_mock()
+        return
+
+    if not args.csv_line:
         print("Error: CSV line parameter required")
-        print("\nUsage:")
-        print('  python correlation_analysis.py "instrument1,instrument2,period,frequency,correlation,repeat"')
-        print('  python correlation_analysis.py --test    # Run mock test')
-        print("\nExample:")
-        print('  python correlation_analysis.py "CPLE6,ITSA4,1Year,1ms,spearman,8"')
+        print('Usage 1 (Single): python correlation_analysis.py "instrument1,instrument2,..." --data-dir /path/to/data')
+        print('Usage 2 (Batch):  python correlation_analysis.py <data_dir> <input_csv> <output_csv>')
         sys.exit(1)
-    
-    # Get CSV line from command line parameter
-    csv_line = sys.argv[1]
-    
+
     # Process the single line
-    result = process_single_line(csv_line)
-    
+    result = process_single_line(args.csv_line, output_file=args.output, data_folder=args.data_dir)
+
     return result
 
 
 if __name__ == "__main__":
-    test_mock()
+    main()
