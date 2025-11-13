@@ -1,0 +1,4 @@
+instrument1,instrument2,period,frequency,correlation,repeat
+PETR3,VALE3,1Year,1H,pearson,1
+PETR3,VALE3,1Year,1D,spearman,1
+PETR3,VALE3,1Year,15T,kendall,1

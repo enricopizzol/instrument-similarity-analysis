@@ -7,9 +7,11 @@ WORKDIR /app
 # Install system dependencies if needed (none for basic pandas/numpy)
 # RUN apt-get update && apt-get install -y ...
 
+# Copy requirements first to leverage Docker cache
+COPY requirements.txt .
+
 # Install Python dependencies
-# Using --no-cache-dir to keep image size down
-RUN pip install --no-cache-dir pandas numpy
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY run_correlation_job.sh .
 
@@ -19,9 +21,6 @@ RUN chmod +x run_correlation_job.sh
 # Set environment variables if needed
 ENV PYTHONUNBUFFERED=1
 
-# Define default command to run the bash script wrapper
-# Usage: docker run -v ... my-image /input.csv /data /output.csv
-ENTRYPOINT ["./run_correlation_job.sh"]
-
-# Default arguments (can be overridden)
-CMD []
+# Default command (can be overridden easily)
+# We use CMD instead of ENTRYPOINT to allow flexible command execution (e.g., bash -c "...")
+CMD ["./run_correlation_job.sh"]
