@@ -10,7 +10,7 @@ def generate_all_combinations():
     """Generate all combinations and shuffle them."""
     
     # Instrument list
-    instruments = [
+    instruments = sorted([
         "ALOS3", "ABEV3", "ASAI3", "AURE3", "AZZA3", "B3SA3", "BBSE3",
         "BBDC3", "BBDC4", "BRAP4", "BBAS3", "BRKM5", "BRAV3", "BPAC11",
         "CXSE3", "CEAB3", "CMIG4", "COGN3", "CPLE6", "CSAN3", "CPFE3",
@@ -23,7 +23,7 @@ def generate_all_combinations():
         "RAIL3", "SBSP3", "SANB11", "CSNA3", "SLCE3", "SMFT3", "SUZB3",
         "TAEE11", "VIVT3", "TIMS3", "TOTS3", "UGPA3", "USIM5", "VALE3",
         "VAMO3", "VBBR3", "VIVA3", "WEGE3", "YDUQ3"
-    ]
+    ])
     
     # Parameters
     periods = ['1Year']
@@ -36,7 +36,7 @@ def generate_all_combinations():
     instrument_pairs = list(combinations(instruments, 2))
     
     # Number of repeats for robustness testing
-    n_repeats = 10
+    n_repeats = 20
     
     for instrument1, instrument2 in instrument_pairs:
         for period in periods:

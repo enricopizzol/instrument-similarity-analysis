@@ -13,14 +13,8 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY run_correlation_job.sh .
-
-# Make script executable
-RUN chmod +x run_correlation_job.sh
-
 # Set environment variables if needed
 ENV PYTHONUNBUFFERED=1
 
-# Default command (can be overridden easily)
-# We use CMD instead of ENTRYPOINT to allow flexible command execution (e.g., bash -c "...")
-CMD ["./run_correlation_job.sh"]
+# Default command - can be overridden at runtime
+CMD ["/bin/bash"]
