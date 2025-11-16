@@ -9,20 +9,16 @@ from itertools import combinations
 def generate_all_combinations():
     """Generate all combinations and shuffle them."""
     
-    # Instrument list
+    # Instrument list - filtered to only include instruments with >= 50MB data files
     instruments = sorted([
-        "ALOS3", "ABEV3", "ASAI3", "AURE3", "AZZA3", "B3SA3", "BBSE3",
-        "BBDC3", "BBDC4", "BRAP4", "BBAS3", "BRKM5", "BRAV3", "BPAC11",
-        "CXSE3", "CEAB3", "CMIG4", "COGN3", "CPLE6", "CSAN3", "CPFE3",
-        "CMIN3", "CURY3", "CVCB3", "CYRE3", "DIRR3", "ELET3", "ELET6",
-        "EMBR3", "ENGI11", "ENEV3", "EGIE3", "EQTL3", "FLRY3", "GGBR4",
-        "GOAU4", "HAPV3", "HYPE3", "IGTI11", "IRBR3", "ISAE4", "ITSA4",
-        "ITUB4", "KLBN11", "RENT3", "LREN3", "MGLU3", "POMO4", "MBRF3",
-        "BEEF3", "MOTV3", "MRVE3", "MULT3", "NATU3", "PCAR3", "PETR3",
-        "PETR4", "RECV3", "PRIO3", "PSSA3", "RADL3", "RAIZ4", "RDOR3",
-        "RAIL3", "SBSP3", "SANB11", "CSNA3", "SLCE3", "SMFT3", "SUZB3",
-        "TAEE11", "VIVT3", "TIMS3", "TOTS3", "UGPA3", "USIM5", "VALE3",
-        "VAMO3", "VBBR3", "VIVA3", "WEGE3", "YDUQ3"
+        "ABEV3", "ALOS3", "ASAI3", "B3SA3", "BBAS3", "BBDC3", "BBDC4",
+        "BBSE3", "BEEF3", "BPAC11", "BRAV3", "CMIG4", "COGN3", "CPLE6",
+        "CSAN3", "CSNA3", "CXSE3", "CYRE3", "ELET3", "ENEV3", "ENGI11",
+        "EQTL3", "GGBR4", "HAPV3", "HYPE3", "ITSA4", "ITUB4", "KLBN11",
+        "LREN3", "MGLU3", "MRVE3", "MULT3", "PETR3", "PETR4", "POMO4",
+        "PRIO3", "RADL3", "RAIL3", "RAIZ4", "RDOR3", "RENT3", "SBSP3",
+        "SMFT3", "SUZB3", "TIMS3", "TOTS3", "UGPA3", "USIM5", "VALE3",
+        "VAMO3", "VBBR3", "VIVA3", "VIVT3", "WEGE3", "CMIN3"
     ])
     
     # Parameters
@@ -36,7 +32,7 @@ def generate_all_combinations():
     instrument_pairs = list(combinations(instruments, 2))
     
     # Number of repeats for robustness testing
-    n_repeats = 20
+    n_repeats = 10
     
     for instrument1, instrument2 in instrument_pairs:
         for period in periods:

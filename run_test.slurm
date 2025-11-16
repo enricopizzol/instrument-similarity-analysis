@@ -1,19 +1,20 @@
 #!/bin/bash
-#SBATCH --job-name=corr_job
+#SBATCH --job-name=corr_test
 #SBATCH --partition=draco
 #SBATCH --nodes=1
+#SBATCH --nodelist=draco7
 #SBATCH --ntasks=1
-#SBATCH --time=10:00:00
-#SBATCH --output=corr_%j.out
-#SBATCH --error=corr_%j.err
+#SBATCH --time=00:30:00
+#SBATCH --output=corr_test_%j.out
+#SBATCH --error=corr_test_%j.err
 
-echo "== Starting correlation job on $(hostname), PID $$ =="
+echo "== Starting TEST correlation job on $(hostname), PID $$ =="
 
 PROJECT_HOME="$HOME/instrument-similarity-analysis"
 
-# INPUT_FILE is passed via --export from submit_all.sh
-INPUT_FILE="$INPUT"
-OUTPUT_FILE="correlation_${INPUT%.csv}_${SLURM_JOB_ID}.csv"
+# Use the POC test input
+INPUT_FILE="input_sample.csv"
+OUTPUT_FILE="test_correlation_results_${SLURM_JOB_ID}.csv"
 
 echo "Project Home: $PROJECT_HOME"
 echo "Input File:   $INPUT_FILE"
@@ -42,7 +43,7 @@ cd $SCRATCH
 # ---------------------------------------------
 echo "== Building Docker image =="
 
-docker build -t corr-container .
+docker build -t corr-container-test .
 
 if [ $? -ne 0 ]; then
     echo "ERROR: Docker build failed"
@@ -50,14 +51,13 @@ if [ $? -ne 0 ]; then
 fi
 
 # ---------------------------------------------
-# 3) Start periodic backup of results (every 5 minutes)
+# 3) Start periodic backup of results (every 2 minutes for testing)
 # ---------------------------------------------
 echo "== Starting periodic backup process =="
 
-# Background process to copy results every 5 minutes
 (
     while true; do
-        sleep 300  # 5 minutes
+        sleep 120  # 2 minutes for testing
         if [ -f "$SCRATCH/$OUTPUT_FILE" ]; then
             cp "$SCRATCH/$OUTPUT_FILE" "$PROJECT_HOME/${OUTPUT_FILE%.csv}_backup.csv"
             echo "[$(date)] Backup created: ${OUTPUT_FILE%.csv}_backup.csv"
@@ -74,7 +74,7 @@ echo "== Running container for correlation task =="
 docker run --rm \
     -v $SCRATCH:/work \
     -w /work \
-    corr-container \
+    corr-container-test \
     bash -c "
         echo 'Container started';
         chmod +x correlation_batch.sh 2>/dev/null;
@@ -95,4 +95,5 @@ cp "$SCRATCH/$OUTPUT_FILE" "$PROJECT_HOME/"
 # Remove backup file if final copy succeeded
 rm -f "$PROJECT_HOME/${OUTPUT_FILE%.csv}_backup.csv"
 
-echo "== Job completed successfully =="
+echo "== TEST job completed successfully =="
+echo "== Check output file: $PROJECT_HOME/$OUTPUT_FILE =="
