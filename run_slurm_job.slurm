@@ -54,7 +54,7 @@ fi
 # ---------------------------------------------
 echo "== Running container for correlation task =="
 
-# Note: We pass the specific INPUT_FILE and 'transformed_data' folder
+# Note: We pass the specific INPUT_FILE and 'transformed_data/instrument_series' folder
 docker run --rm \
     -v $SCRATCH:/work \
     -w /work \
@@ -62,7 +62,7 @@ docker run --rm \
     bash -c "
         echo 'Container started';
         chmod +x correlation_batch.sh 2>/dev/null;
-        bash correlation_batch.sh \"$INPUT_FILE\" transformed_data \"$OUTPUT_FILE\"
+        bash correlation_batch.sh \"$INPUT_FILE\" transformed_data/instrument_series \"$OUTPUT_FILE\"
     "
 
 echo "== Container finished running =="

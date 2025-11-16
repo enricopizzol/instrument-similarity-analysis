@@ -62,19 +62,31 @@ def generate_all_combinations():
     return df
 
 def main():
-    """Generate and save shuffled combinations."""
+    """Generate and save shuffled combinations split into 6 files."""
     
     print("Generating all combinations...")
     df = generate_all_combinations()
     
     print(f"Generated {len(df):,} combinations")
-        
-    # Save to CSV
-    filename = 'instrument_combinations_shuffled.csv'
-    df.to_csv(filename, index=False)
     
-    print(f"\n✅ Shuffled combinations saved to: {filename}")
-    print(f"File contains {len(df):,} rows")
+    # Split into 6 equal parts
+    n_splits = 6
+    split_size = len(df) // n_splits
+    
+    print(f"\nSplitting into {n_splits} files of ~{split_size:,} rows each...")
+    
+    for i in range(n_splits):
+        start_idx = i * split_size
+        # Last split gets any remaining rows
+        end_idx = (i + 1) * split_size if i < n_splits - 1 else len(df)
+        
+        df_split = df.iloc[start_idx:end_idx]
+        filename = f'instrument_combinations_part_{i+1}.csv'
+        df_split.to_csv(filename, index=False)
+        
+        print(f"✅ Saved {filename} ({len(df_split):,} rows)")
+    
+    print(f"\n✅ Total: {len(df):,} combinations split into {n_splits} files")
 
 if __name__ == "__main__":
     main()
