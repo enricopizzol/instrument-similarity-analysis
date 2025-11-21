@@ -53,22 +53,25 @@ def resample_and_fill(df, frequency):
     if frequency == '1ms':
         return df
 
-    # Resample and take last value in each period
-    # This creates a continuous grid (including nights/weekends) with NaNs where no data exists
-    df_resampled = df.resample(frequency).last()
-
-    # Filter based on frequency type
+    # OPTIMIZATION: Filter to trading hours BEFORE resampling
+    # This prevents creating billions of timestamps for overnight/weekend periods
+    # Trading hours: 10:00 - 16:59 (before 17:00)
+    is_trading_hours = (df.index.hour >= 10) & (df.index.hour < 17)
+    df_trading = df[is_trading_hours]
+    
+    # For daily/weekly/monthly frequencies, we need the full dataset (not just trading hours)
     if frequency in ['1D', '1W', '1M']:
-        # For daily/weekly/monthly: Filter out weekends (Saturday=5, Sunday=6)
+        # Use full dataset for daily+ frequencies
+        df_resampled = df.resample(frequency).last()
+        # Filter out weekends (Saturday=5, Sunday=6)
         # Keep only Monday-Friday (0-4)
         is_weekday = df_resampled.index.dayofweek < 5
         df_resampled = df_resampled[is_weekday]
     else:
-        # For intraday frequencies: Filter to trading hours (10:00 - 17:00)
-        # This removes overnight/weekend bars
-        is_trading_hours = (df_resampled.index.hour >= 10) & (df_resampled.index.hour < 17)
-        df_resampled = df_resampled[is_trading_hours]
-
+        # For intraday frequencies: resample only trading hours data
+        # This dramatically reduces memory usage (no overnight/weekend timestamps created)
+        df_resampled = df_trading.resample(frequency).last()
+    
     return df_resampled
 
 
