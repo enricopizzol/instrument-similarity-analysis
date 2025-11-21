@@ -57,10 +57,15 @@ def resample_and_fill(df, frequency):
     # This creates a continuous grid (including nights/weekends) with NaNs where no data exists
     df_resampled = df.resample(frequency).last()
 
-    # Filter back to trading hours only (10:00 - 17:00)
-    # BUT: Skip this filter for daily/weekly frequencies (1D, 1W, etc.)
-    # because their timestamps are at midnight (00:00) which is outside trading hours
-    if frequency not in ['1D', '1W', '1M']:
+    # Filter based on frequency type
+    if frequency in ['1D', '1W', '1M']:
+        # For daily/weekly/monthly: Filter out weekends (Saturday=5, Sunday=6)
+        # Keep only Monday-Friday (0-4)
+        is_weekday = df_resampled.index.dayofweek < 5
+        df_resampled = df_resampled[is_weekday]
+    else:
+        # For intraday frequencies: Filter to trading hours (10:00 - 17:00)
+        # This removes overnight/weekend bars
         is_trading_hours = (df_resampled.index.hour >= 10) & (df_resampled.index.hour < 17)
         df_resampled = df_resampled[is_trading_hours]
 
