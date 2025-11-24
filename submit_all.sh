@@ -4,21 +4,22 @@
 declare -a NODES=(draco1 draco2 draco3 draco4 draco5 draco6 draco7)
 
 # Array of input files (must be in the same order as nodes)
-# First 6 nodes: full combination partitions
+# First 6 nodes: Top 10 most liquid instruments (97% faster!)
 # 7th node: POC test input
 declare -a INPUTS=(
-    instrument_combinations_part_1.csv
-    instrument_combinations_part_2.csv
-    instrument_combinations_part_3.csv
-    instrument_combinations_part_4.csv
-    instrument_combinations_part_5.csv
-    instrument_combinations_part_6.csv
+    instrument_combinations_top10_part_1.csv
+    instrument_combinations_top10_part_2.csv
+    instrument_combinations_top10_part_3.csv
+    instrument_combinations_top10_part_4.csv
+    instrument_combinations_top10_part_5.csv
+    instrument_combinations_top10_part_6.csv
     input_sample.csv
 )
 
 echo "Submitting ${#NODES[@]} correlation jobs..."
-echo "  - Nodes 1-6: Full combination partitions"
+echo "  - Nodes 1-6: Top 10 instruments (~1,125 rows each)"
 echo "  - Node 7: POC test input"
+echo "  - Total: 6,750 combinations (97% reduction)"
 echo ""
 
 for i in ${!NODES[@]}; do
