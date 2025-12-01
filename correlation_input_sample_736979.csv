@@ -1,0 +1,4 @@
+instrument1,instrument2,period,frequency,correlation_method,repeat,correlation_value,execution_time_seconds,correlation_time_seconds,len1_raw,len2_raw,len1_resampled,len2_resampled,len_corr_matrix,weighted_correlation
+PETR3,VALE3,1Year,1H,pearson,1,-0.21635160196842018,9.030121088027954,0.0017893314361572266,2313747,4355401,2170,2170,1509,
+PETR3,VALE3,1Year,1D,spearman,1,,19.400758028030396,,2313747,4355401,0,0,0,
+PETR3,VALE3,1Year,15T,kendall,1,-0.10170299694788792,9.763854265213013,0.6948471069335938,2313747,4355401,8680,8680,6032,

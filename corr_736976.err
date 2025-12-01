@@ -1,0 +1,100 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 543B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 2.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 141B done
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/python:3.11-slim@sha256:193fdd0bbcb3d2ae612bd6cc3548d2f7c78d65b549fcaa8af75624c47474444d
+#5 resolve docker.io/library/python:3.11-slim@sha256:193fdd0bbcb3d2ae612bd6cc3548d2f7c78d65b549fcaa8af75624c47474444d done
+#5 sha256:22b63e76fde1e200371ed9f3cee91161d192063bcff65c9ab6bf63819810a974 0B / 1.29MB 0.1s
+#5 sha256:b3dd773c329649f22e467ae63d1c612a039a0559dec99ffb9ada904ab5c60c55 0B / 14.36MB 0.1s
+#5 sha256:193fdd0bbcb3d2ae612bd6cc3548d2f7c78d65b549fcaa8af75624c47474444d 10.37kB / 10.37kB done
+#5 sha256:c4116d4d7ea9320db352f6516001262753529edf1e20b2c6609a6b9a49cc6be4 1.75kB / 1.75kB done
+#5 sha256:040af88f5bce9e9239b7e739e86304d26964d1d55ada56b9297a3d891e91634d 5.48kB / 5.48kB done
+#5 sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 0B / 29.78MB 0.1s
+#5 sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 5.24MB / 29.78MB 0.5s
+#5 sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 7.34MB / 29.78MB 0.6s
+#5 sha256:22b63e76fde1e200371ed9f3cee91161d192063bcff65c9ab6bf63819810a974 1.29MB / 1.29MB 0.8s done
+#5 sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 12.58MB / 29.78MB 0.8s
+#5 sha256:1771569cc1299abc9cc762fc4419523e721b11a3927ef968ae63ba0a4a88f2da 0B / 251B 0.8s
+#5 sha256:b3dd773c329649f22e467ae63d1c612a039a0559dec99ffb9ada904ab5c60c55 2.10MB / 14.36MB 0.9s
+#5 sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 15.73MB / 29.78MB 0.9s
+#5 sha256:b3dd773c329649f22e467ae63d1c612a039a0559dec99ffb9ada904ab5c60c55 5.24MB / 14.36MB 1.1s
+#5 sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 23.07MB / 29.78MB 1.1s
+#5 sha256:b3dd773c329649f22e467ae63d1c612a039a0559dec99ffb9ada904ab5c60c55 9.44MB / 14.36MB 1.3s
+#5 sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 29.78MB / 29.78MB 1.3s done
+#5 sha256:1771569cc1299abc9cc762fc4419523e721b11a3927ef968ae63ba0a4a88f2da 251B / 251B 1.2s done
+#5 sha256:b3dd773c329649f22e467ae63d1c612a039a0559dec99ffb9ada904ab5c60c55 11.53MB / 14.36MB 1.4s
+#5 extracting sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 0.1s
+#5 sha256:b3dd773c329649f22e467ae63d1c612a039a0559dec99ffb9ada904ab5c60c55 14.36MB / 14.36MB 1.5s done
+#5 extracting sha256:0e4bc2bd6656e6e004e3c749af70e5650bac2258243eb0949dea51cb8b7863db 1.4s done
+#5 extracting sha256:22b63e76fde1e200371ed9f3cee91161d192063bcff65c9ab6bf63819810a974 0.1s
+#5 extracting sha256:22b63e76fde1e200371ed9f3cee91161d192063bcff65c9ab6bf63819810a974 0.2s done
+#5 extracting sha256:b3dd773c329649f22e467ae63d1c612a039a0559dec99ffb9ada904ab5c60c55 0.1s
+#5 extracting sha256:b3dd773c329649f22e467ae63d1c612a039a0559dec99ffb9ada904ab5c60c55 1.0s done
+#5 extracting sha256:1771569cc1299abc9cc762fc4419523e721b11a3927ef968ae63ba0a4a88f2da done
+#5 DONE 4.1s
+
+#6 [2/4] WORKDIR /app
+#6 DONE 0.4s
+
+#7 [3/4] COPY requirements.txt .
+#7 DONE 0.0s
+
+#8 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+#8 3.530 Collecting numpy==2.0.2 (from -r requirements.txt (line 1))
+#8 3.605   Downloading numpy-2.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+#8 3.626      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.9/60.9 kB 3.0 MB/s eta 0:00:00
+#8 3.938 Collecting pandas==2.3.3 (from -r requirements.txt (line 2))
+#8 3.957   Downloading pandas-2.3.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+#8 3.967      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.2/91.2 kB 12.8 MB/s eta 0:00:00
+#8 4.319 Collecting scipy==1.14.1 (from -r requirements.txt (line 3))
+#8 4.340   Downloading scipy-1.14.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+#8 4.344      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.8/60.8 kB 105.4 MB/s eta 0:00:00
+#8 4.411 Collecting python-dateutil==2.9.0.post0 (from -r requirements.txt (line 4))
+#8 4.430   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#8 4.548 Collecting pytz==2025.2 (from -r requirements.txt (line 5))
+#8 4.567   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+#8 4.631 Collecting tzdata==2025.2 (from -r requirements.txt (line 6))
+#8 4.650   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+#8 4.901 Collecting six>=1.5 (from python-dateutil==2.9.0.post0->-r requirements.txt (line 4))
+#8 4.930   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#8 4.971 Downloading numpy-2.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.5 MB)
+#8 5.645    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.5/19.5 MB 56.5 MB/s eta 0:00:00
+#8 5.667 Downloading pandas-2.3.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+#8 5.810    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 93.9 MB/s eta 0:00:00
+#8 5.838 Downloading scipy-1.14.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (41.2 MB)
+#8 6.259    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.2/41.2 MB 102.4 MB/s eta 0:00:00
+#8 6.278 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#8 6.283    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 107.6 MB/s eta 0:00:00
+#8 6.301 Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+#8 6.310    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 100.3 MB/s eta 0:00:00
+#8 6.328 Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+#8 6.335    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 347.8/347.8 kB 100.1 MB/s eta 0:00:00
+#8 6.353 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#8 7.038 Installing collected packages: pytz, tzdata, six, numpy, scipy, python-dateutil, pandas
+#8 22.08 Successfully installed numpy-2.0.2 pandas-2.3.3 python-dateutil-2.9.0.post0 pytz-2025.2 scipy-1.14.1 six-1.17.0 tzdata-2025.2
+#8 22.08 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 22.27 
+#8 22.27 [notice] A new release of pip is available: 24.0 -> 25.3
+#8 22.27 [notice] To update, run: pip install --upgrade pip
+#8 DONE 25.1s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 4.0s done
+#9 writing image sha256:ae6f4963a19e7769c433f4d219e78afa61b73db7ec3c891a8036f62ab61927e0 done
+#9 naming to docker.io/library/corr-container done
+#9 DONE 4.0s
+slurmstepd: error: *** JOB 736976 ON draco4 CANCELLED AT 2025-11-30T23:43:47 ***

@@ -1,0 +1,46 @@
+== Starting correlation job on draco7, PID 1935048 ==
+Project Home: /home/users/edpizzol/instrument-similarity-analysis
+Input File:   input_sample.csv
+Output File:  correlation_input_sample_736979.csv
+Node:         draco7
+== Copying files to SCRATCH ==
+Files copied:
+total 40
+-rw-r--r-- 1 edpizzol members 11991 Nov 30 19:27 correlation_analysis.py
+-rwxr-xr-x 1 edpizzol members   773 Nov 30 19:27 correlation_batch.sh
+-rw-r--r-- 1 root     root      501 Nov 29 23:24 correlation_input_sample_736917.csv
+-rw-r--r-- 1 edpizzol members   504 Nov 30 19:27 Dockerfile
+-rw-r--r-- 1 edpizzol members   155 Nov 30 19:27 input_sample.csv
+-rw-r--r-- 1 edpizzol members    98 Nov 30 19:27 requirements.txt
+-rw-r--r-- 1 root     root      539 Nov 30 19:22 test_correlation_results_736972.csv
+drwx------ 3 edpizzol members  4096 Nov 29 23:09 transformed_data
+== Building Docker image ==
+== Starting periodic backup process ==
+== Running container for correlation task ==
+Container started
+Running Correlation Job
+Input: input_sample.csv
+Data: transformed_data/instrument_series
+Output: correlation_input_sample_736979.csv
+Processing lines...
+Processing [1]: PETR3,VALE3,1Year,1H,pearson,1
+Processing: PETR3,VALE3,1Year,1H,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[2170, 2170] -> CorrMatrix[1509]
+Pandas pearson correlation: -0.21635160196842018
+Finished: correlation=-0.21635160196842018, time=9.0301s, saved to correlation_input_sample_736979.csv
+Processing [2]: PETR3,VALE3,1Year,1D,spearman,1
+Processing: PETR3,VALE3,1Year,1D,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[0, 0] -> CorrMatrix[0]
+Finished: correlation=None, time=19.4008s, saved to correlation_input_sample_736979.csv
+Processing [3]: PETR3,VALE3,1Year,15T,kendall,1
+Processing: PETR3,VALE3,1Year,15T,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 15T: Raw[2313747, 4355401] -> Resampled[8680, 8680] -> CorrMatrix[6032]
+Pandas kendall correlation: -0.10170299694788792
+Finished: correlation=-0.10170299694788792, time=9.7639s, saved to correlation_input_sample_736979.csv
+Job Completed. Processed 3 lines.
+== Container finished running ==
+== Copying final results back to HOME ==
+== Job completed successfully ==
