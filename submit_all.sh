@@ -7,12 +7,12 @@ declare -a NODES=(draco1 draco2 draco3 draco4 draco5 draco6 draco7)
 # First 6 nodes: full combination partitions
 # 7th node: POC test input
 declare -a INPUTS=(
-    instrument_combinations_part_1.csv
-    instrument_combinations_part_2.csv
-    instrument_combinations_part_3.csv
-    instrument_combinations_part_4.csv
-    instrument_combinations_part_5.csv
-    instrument_combinations_part_6.csv
+    "instrument_combinations_top10_part_1.csv"
+    "instrument_combinations_top10_part_2.csv"
+    "instrument_combinations_top10_part_3.csv"
+    "instrument_combinations_top10_part_4.csv"
+    "instrument_combinations_top10_part_5.csv"
+    "instrument_combinations_top10_part_6.csv"
     input_sample.csv
 )
 

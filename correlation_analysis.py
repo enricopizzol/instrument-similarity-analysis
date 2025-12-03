@@ -69,8 +69,22 @@ def resample_and_fill(df, frequency):
         df_resampled = df_resampled[is_weekday]
     else:
         # For intraday frequencies: resample only trading hours data
-        # This dramatically reduces memory usage (no overnight/weekend timestamps created)
-        df_resampled = df_trading.resample(frequency).last()
+        # OPTIMIZATION: Resample per day to avoid creating overnight timestamps
+        # Resampling the full series creates timestamps for overnight gaps (17:00-10:00)
+        # which causes OOM and OverflowError for high frequencies (e.g. 10ms).
+        
+        # Group by date and resample each day individually
+        # This ensures we only create bins for the trading hours (approx 10:00-17:00)
+        day_groups = df_trading.groupby(df_trading.index.normalize())
+        
+        resampled_chunks = []
+        for _, day_data in day_groups:
+            resampled_chunks.append(day_data.resample(frequency).last())
+            
+        if resampled_chunks:
+            df_resampled = pd.concat(resampled_chunks)
+        else:
+            df_resampled = pd.DataFrame(columns=df.columns)
     
     return df_resampled
 
