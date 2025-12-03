@@ -1,0 +1,51 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 30B 0.0s
+#1 transferring dockerfile: 543B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 1.4s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/python:3.11-slim@sha256:193fdd0bbcb3d2ae612bd6cc3548d2f7c78d65b549fcaa8af75624c47474444d
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 141B done
+#5 DONE 0.0s
+
+#6 [2/4] WORKDIR /app
+#6 CACHED
+
+#7 [3/4] COPY requirements.txt .
+#7 CACHED
+
+#8 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 exporting to image
+#9 exporting layers done
+#9 writing image sha256:37315ebff2612155386fdb5796d6b3a52cbb4367411550195ea25fa37135f9e4 done
+#9 naming to docker.io/library/corr-container-poc done
+#9 DONE 0.0s
+correlation_batch.sh: line 34:   811 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:   843 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:   875 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:   907 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:   939 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:   971 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1003 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1035 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1067 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1099 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1131 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1163 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1195 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1227 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+correlation_batch.sh: line 34:  1259 Killed                  python correlation_analysis.py "$line" --data-dir "$DATA_FOLDER" --output "$OUTPUT_CSV"
+slurmstepd: error: *** JOB 737006 ON draco7 CANCELLED AT 2025-12-01T03:25:34 DUE TO TIME LIMIT ***

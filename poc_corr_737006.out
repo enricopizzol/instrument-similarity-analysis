@@ -1,0 +1,260 @@
+== Starting POC correlation job on draco7, PID 2057701 ==
+Project Home: /home/users/edpizzol/instrument-similarity-analysis
+Input File:   input_sample.csv
+Output File:  poc_correlation_results_737006.csv
+Node:         draco7
+Total combinations: 210 (14 frequencies × 3 methods × 5 repeats)
+== Copying files to SCRATCH ==
+Files copied:
+-rw-r--r-- 1 edpizzol members  13K Dec  1 01:25 /scratch/edpizzol//correlation_analysis.py
+-rwxr-xr-x 1 edpizzol members  773 Dec  1 01:25 /scratch/edpizzol//correlation_batch.sh
+-rw-r--r-- 1 root     root     501 Nov 29 23:24 /scratch/edpizzol//correlation_input_sample_736917.csv
+-rw-r--r-- 1 root     root     540 Nov 30 19:29 /scratch/edpizzol//correlation_input_sample_736979.csv
+-rw-r--r-- 1 root     root    2.8K Dec  1 01:20 /scratch/edpizzol//correlation_input_sample_736996.csv
+-rw-r--r-- 1 edpizzol members 6.3K Dec  1 01:25 /scratch/edpizzol//input_sample.csv
+-rw-r--r-- 1 root     root     539 Nov 30 19:22 /scratch/edpizzol//test_correlation_results_736972.csv
+== Building Docker image ==
+== Starting periodic backup process ==
+== Running container for POC correlation task ==
+== Testing all frequencies: 1ms, 5ms, 10ms, 50ms, 100ms, 500ms, 1S, 30S, 1T, 5T, 15T, 30T, 1H, 1D ==
+Container started
+Running Correlation Job
+Input: input_sample.csv
+Data: transformed_data/instrument_series
+Output: poc_correlation_results_737006.csv
+Processing lines...
+Processing [1]: PETR3,VALE3,1Year,1ms,pearson,1
+Processing: PETR3,VALE3,1Year,1ms,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=12.2546s, saved to poc_correlation_results_737006.csv
+Processing [2]: PETR3,VALE3,1Year,1ms,pearson,2
+Processing: PETR3,VALE3,1Year,1ms,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=11.9030s, saved to poc_correlation_results_737006.csv
+Processing [3]: PETR3,VALE3,1Year,1ms,pearson,3
+Processing: PETR3,VALE3,1Year,1ms,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=27.5877s, saved to poc_correlation_results_737006.csv
+Processing [4]: PETR3,VALE3,1Year,1ms,pearson,4
+Processing: PETR3,VALE3,1Year,1ms,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=12.0132s, saved to poc_correlation_results_737006.csv
+Processing [5]: PETR3,VALE3,1Year,1ms,pearson,5
+Processing: PETR3,VALE3,1Year,1ms,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=28.1682s, saved to poc_correlation_results_737006.csv
+Processing [6]: PETR3,VALE3,1Year,1ms,kendall,1
+Processing: PETR3,VALE3,1Year,1ms,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=16.8420s, saved to poc_correlation_results_737006.csv
+Processing [7]: PETR3,VALE3,1Year,1ms,kendall,2
+Processing: PETR3,VALE3,1Year,1ms,kendall,2
+[Mon Dec  1 01:32:44 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=32.2357s, saved to poc_correlation_results_737006.csv
+Processing [8]: PETR3,VALE3,1Year,1ms,kendall,3
+Processing: PETR3,VALE3,1Year,1ms,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=13.9538s, saved to poc_correlation_results_737006.csv
+Processing [9]: PETR3,VALE3,1Year,1ms,kendall,4
+Processing: PETR3,VALE3,1Year,1ms,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=32.5337s, saved to poc_correlation_results_737006.csv
+Processing [10]: PETR3,VALE3,1Year,1ms,kendall,5
+Processing: PETR3,VALE3,1Year,1ms,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=13.9465s, saved to poc_correlation_results_737006.csv
+Processing [11]: PETR3,VALE3,1Year,1ms,spearman,1
+Processing: PETR3,VALE3,1Year,1ms,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=13.6588s, saved to poc_correlation_results_737006.csv
+Processing [12]: PETR3,VALE3,1Year,1ms,spearman,2
+Processing: PETR3,VALE3,1Year,1ms,spearman,2
+[Mon Dec  1 01:34:44 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=32.9959s, saved to poc_correlation_results_737006.csv
+Processing [13]: PETR3,VALE3,1Year,1ms,spearman,3
+Processing: PETR3,VALE3,1Year,1ms,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=13.6797s, saved to poc_correlation_results_737006.csv
+Processing [14]: PETR3,VALE3,1Year,1ms,spearman,4
+Processing: PETR3,VALE3,1Year,1ms,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=13.8158s, saved to poc_correlation_results_737006.csv
+Processing [15]: PETR3,VALE3,1Year,1ms,spearman,5
+Processing: PETR3,VALE3,1Year,1ms,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=32.5211s, saved to poc_correlation_results_737006.csv
+Processing [16]: PETR3,VALE3,1Year,5ms,pearson,1
+Processing: PETR3,VALE3,1Year,5ms,pearson,1
+[Mon Dec  1 01:36:44 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 01:38:44 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [17]: PETR3,VALE3,1Year,5ms,pearson,2
+Processing: PETR3,VALE3,1Year,5ms,pearson,2
+[Mon Dec  1 01:40:45 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 01:42:45 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [18]: PETR3,VALE3,1Year,5ms,pearson,3
+Processing: PETR3,VALE3,1Year,5ms,pearson,3
+[Mon Dec  1 01:44:45 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [19]: PETR3,VALE3,1Year,5ms,pearson,4
+Processing: PETR3,VALE3,1Year,5ms,pearson,4
+[Mon Dec  1 01:46:46 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 01:48:46 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [20]: PETR3,VALE3,1Year,5ms,pearson,5
+Processing: PETR3,VALE3,1Year,5ms,pearson,5
+[Mon Dec  1 01:50:46 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 01:52:46 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [21]: PETR3,VALE3,1Year,5ms,kendall,1
+Processing: PETR3,VALE3,1Year,5ms,kendall,1
+[Mon Dec  1 01:54:47 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 01:56:47 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [22]: PETR3,VALE3,1Year,5ms,kendall,2
+Processing: PETR3,VALE3,1Year,5ms,kendall,2
+[Mon Dec  1 01:58:47 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:00:47 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [23]: PETR3,VALE3,1Year,5ms,kendall,3
+Processing: PETR3,VALE3,1Year,5ms,kendall,3
+[Mon Dec  1 02:02:48 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:04:48 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [24]: PETR3,VALE3,1Year,5ms,kendall,4
+Processing: PETR3,VALE3,1Year,5ms,kendall,4
+[Mon Dec  1 02:06:48 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:08:48 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [25]: PETR3,VALE3,1Year,5ms,kendall,5
+Processing: PETR3,VALE3,1Year,5ms,kendall,5
+[Mon Dec  1 02:10:48 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [26]: PETR3,VALE3,1Year,5ms,spearman,1
+Processing: PETR3,VALE3,1Year,5ms,spearman,1
+[Mon Dec  1 02:12:49 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:14:49 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [27]: PETR3,VALE3,1Year,5ms,spearman,2
+Processing: PETR3,VALE3,1Year,5ms,spearman,2
+[Mon Dec  1 02:16:49 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:18:49 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [28]: PETR3,VALE3,1Year,5ms,spearman,3
+Processing: PETR3,VALE3,1Year,5ms,spearman,3
+[Mon Dec  1 02:20:50 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:22:50 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [29]: PETR3,VALE3,1Year,5ms,spearman,4
+Processing: PETR3,VALE3,1Year,5ms,spearman,4
+[Mon Dec  1 02:24:50 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [30]: PETR3,VALE3,1Year,5ms,spearman,5
+Processing: PETR3,VALE3,1Year,5ms,spearman,5
+[Mon Dec  1 02:26:50 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:28:50 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:30:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Processing [31]: PETR3,VALE3,1Year,10ms,pearson,1
+Processing: PETR3,VALE3,1Year,10ms,pearson,1
+[Mon Dec  1 02:32:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:34:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=268.7903s, saved to poc_correlation_results_737006.csv
+Processing [32]: PETR3,VALE3,1Year,10ms,pearson,2
+Processing: PETR3,VALE3,1Year,10ms,pearson,2
+[Mon Dec  1 02:36:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:38:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=295.7159s, saved to poc_correlation_results_737006.csv
+Processing [33]: PETR3,VALE3,1Year,10ms,pearson,3
+Processing: PETR3,VALE3,1Year,10ms,pearson,3
+[Mon Dec  1 02:40:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:42:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=159.0735s, saved to poc_correlation_results_737006.csv
+Processing [34]: PETR3,VALE3,1Year,10ms,pearson,4
+Processing: PETR3,VALE3,1Year,10ms,pearson,4
+[Mon Dec  1 02:44:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:46:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=266.4689s, saved to poc_correlation_results_737006.csv
+Processing [35]: PETR3,VALE3,1Year,10ms,pearson,5
+Processing: PETR3,VALE3,1Year,10ms,pearson,5
+[Mon Dec  1 02:48:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:50:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=249.3654s, saved to poc_correlation_results_737006.csv
+Processing [36]: PETR3,VALE3,1Year,10ms,kendall,1
+Processing: PETR3,VALE3,1Year,10ms,kendall,1
+[Mon Dec  1 02:52:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=163.4107s, saved to poc_correlation_results_737006.csv
+Processing [37]: PETR3,VALE3,1Year,10ms,kendall,2
+Processing: PETR3,VALE3,1Year,10ms,kendall,2
+[Mon Dec  1 02:54:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 02:56:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=160.1342s, saved to poc_correlation_results_737006.csv
+Processing [38]: PETR3,VALE3,1Year,10ms,kendall,3
+Processing: PETR3,VALE3,1Year,10ms,kendall,3
+[Mon Dec  1 02:58:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=158.2467s, saved to poc_correlation_results_737006.csv
+Processing [39]: PETR3,VALE3,1Year,10ms,kendall,4
+Processing: PETR3,VALE3,1Year,10ms,kendall,4
+[Mon Dec  1 03:00:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=162.6031s, saved to poc_correlation_results_737006.csv
+Processing [40]: PETR3,VALE3,1Year,10ms,kendall,5
+Processing: PETR3,VALE3,1Year,10ms,kendall,5
+[Mon Dec  1 03:02:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 03:04:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=187.0217s, saved to poc_correlation_results_737006.csv
+Processing [41]: PETR3,VALE3,1Year,10ms,spearman,1
+Processing: PETR3,VALE3,1Year,10ms,spearman,1
+[Mon Dec  1 03:06:51 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 03:08:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=266.7565s, saved to poc_correlation_results_737006.csv
+Processing [42]: PETR3,VALE3,1Year,10ms,spearman,2
+Processing: PETR3,VALE3,1Year,10ms,spearman,2
+[Mon Dec  1 03:10:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 03:12:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=266.2010s, saved to poc_correlation_results_737006.csv
+Processing [43]: PETR3,VALE3,1Year,10ms,spearman,3
+Processing: PETR3,VALE3,1Year,10ms,spearman,3
+[Mon Dec  1 03:14:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 03:16:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 03:18:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=279.8134s, saved to poc_correlation_results_737006.csv
+Processing [44]: PETR3,VALE3,1Year,10ms,spearman,4
+Processing: PETR3,VALE3,1Year,10ms,spearman,4
+[Mon Dec  1 03:20:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+[Mon Dec  1 03:22:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=265.8114s, saved to poc_correlation_results_737006.csv
+Processing [45]: PETR3,VALE3,1Year,10ms,spearman,5
+Processing: PETR3,VALE3,1Year,10ms,spearman,5
+[Mon Dec  1 03:24:52 AM -03 2025] Backup created: poc_correlation_results_737006_backup.csv
