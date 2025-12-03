@@ -1,0 +1,1156 @@
+== Starting correlation job on draco7, PID 2239705 ==
+Project Home: /home/users/edpizzol/instrument-similarity-analysis
+Input File:   input_sample.csv
+Output File:  correlation_input_sample_737043.csv
+Node:         draco7
+== Copying files to SCRATCH ==
+Files copied:
+total 60
+-rw-r--r-- 1 edpizzol members 12503 Dec  1 10:13 correlation_analysis.py
+-rwxr-xr-x 1 edpizzol members   773 Dec  1 10:13 correlation_batch.sh
+-rw-r--r-- 1 root     root      501 Nov 29 23:24 correlation_input_sample_736917.csv
+-rw-r--r-- 1 root     root      540 Nov 30 19:29 correlation_input_sample_736979.csv
+-rw-r--r-- 1 root     root     2808 Dec  1 01:20 correlation_input_sample_736996.csv
+-rw-r--r-- 1 edpizzol members   504 Dec  1 10:13 Dockerfile
+-rw-r--r-- 1 edpizzol members  6380 Dec  1 10:13 input_sample.csv
+-rw-r--r-- 1 root     root     3265 Dec  1 03:23 poc_correlation_results_737006.csv
+-rw-r--r-- 1 edpizzol members    98 Dec  1 10:13 requirements.txt
+-rw-r--r-- 1 root     root      539 Nov 30 19:22 test_correlation_results_736972.csv
+drwx------ 3 edpizzol members  4096 Nov 29 23:09 transformed_data
+== Building Docker image ==
+== Starting periodic backup process ==
+== Running container for correlation task ==
+Container started
+Running Correlation Job
+Input: input_sample.csv
+Data: transformed_data/instrument_series
+Output: correlation_input_sample_737043.csv
+Processing lines...
+Processing [1]: PETR3,VALE3,1Year,1ms,pearson,1
+Processing: PETR3,VALE3,1Year,1ms,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=27.5459s, saved to correlation_input_sample_737043.csv
+Processing [2]: PETR3,VALE3,1Year,1ms,pearson,2
+Processing: PETR3,VALE3,1Year,1ms,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=11.9008s, saved to correlation_input_sample_737043.csv
+Processing [3]: PETR3,VALE3,1Year,1ms,pearson,3
+Processing: PETR3,VALE3,1Year,1ms,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=11.8482s, saved to correlation_input_sample_737043.csv
+Processing [4]: PETR3,VALE3,1Year,1ms,pearson,4
+Processing: PETR3,VALE3,1Year,1ms,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=27.5688s, saved to correlation_input_sample_737043.csv
+Processing [5]: PETR3,VALE3,1Year,1ms,pearson,5
+Processing: PETR3,VALE3,1Year,1ms,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas pearson correlation: -0.18639453251526825
+Finished: correlation=-0.18639453251526825, time=11.8419s, saved to correlation_input_sample_737043.csv
+Processing [6]: PETR3,VALE3,1Year,1ms,kendall,1
+Processing: PETR3,VALE3,1Year,1ms,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=34.9779s, saved to correlation_input_sample_737043.csv
+Processing [7]: PETR3,VALE3,1Year,1ms,kendall,2
+Processing: PETR3,VALE3,1Year,1ms,kendall,2
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=13.9496s, saved to correlation_input_sample_737043.csv
+Processing [8]: PETR3,VALE3,1Year,1ms,kendall,3
+Processing: PETR3,VALE3,1Year,1ms,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=13.9242s, saved to correlation_input_sample_737043.csv
+Processing [9]: PETR3,VALE3,1Year,1ms,kendall,4
+Processing: PETR3,VALE3,1Year,1ms,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=32.1269s, saved to correlation_input_sample_737043.csv
+Processing [10]: PETR3,VALE3,1Year,1ms,kendall,5
+Processing: PETR3,VALE3,1Year,1ms,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas kendall correlation: -0.07809683442211611
+Finished: correlation=-0.07809683442211611, time=13.9393s, saved to correlation_input_sample_737043.csv
+Processing [11]: PETR3,VALE3,1Year,1ms,spearman,1
+Processing: PETR3,VALE3,1Year,1ms,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=33.0095s, saved to correlation_input_sample_737043.csv
+Processing [12]: PETR3,VALE3,1Year,1ms,spearman,2
+Processing: PETR3,VALE3,1Year,1ms,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=13.6968s, saved to correlation_input_sample_737043.csv
+Processing [13]: PETR3,VALE3,1Year,1ms,spearman,3
+Processing: PETR3,VALE3,1Year,1ms,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=33.3057s, saved to correlation_input_sample_737043.csv
+Processing [14]: PETR3,VALE3,1Year,1ms,spearman,4
+Processing: PETR3,VALE3,1Year,1ms,spearman,4
+[Mon Dec  1 10:24:50 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=13.6737s, saved to correlation_input_sample_737043.csv
+Processing [15]: PETR3,VALE3,1Year,1ms,spearman,5
+Processing: PETR3,VALE3,1Year,1ms,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 1ms: Raw[2313747, 4355401] -> Resampled[2313747, 4355401] -> CorrMatrix[6551179]
+Pandas spearman correlation: -0.12804286364322837
+Finished: correlation=-0.12804286364322837, time=13.6879s, saved to correlation_input_sample_737043.csv
+Processing [16]: PETR3,VALE3,1Year,5ms,pearson,1
+Processing: PETR3,VALE3,1Year,5ms,pearson,1
+Processing [17]: PETR3,VALE3,1Year,5ms,pearson,2
+Processing: PETR3,VALE3,1Year,5ms,pearson,2
+[Mon Dec  1 10:29:50 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [18]: PETR3,VALE3,1Year,5ms,pearson,3
+Processing: PETR3,VALE3,1Year,5ms,pearson,3
+Processing [19]: PETR3,VALE3,1Year,5ms,pearson,4
+Processing: PETR3,VALE3,1Year,5ms,pearson,4
+[Mon Dec  1 10:34:50 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [20]: PETR3,VALE3,1Year,5ms,pearson,5
+Processing: PETR3,VALE3,1Year,5ms,pearson,5
+[Mon Dec  1 10:39:51 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [21]: PETR3,VALE3,1Year,5ms,kendall,1
+Processing: PETR3,VALE3,1Year,5ms,kendall,1
+[Mon Dec  1 10:44:51 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [22]: PETR3,VALE3,1Year,5ms,kendall,2
+Processing: PETR3,VALE3,1Year,5ms,kendall,2
+[Mon Dec  1 10:49:51 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [23]: PETR3,VALE3,1Year,5ms,kendall,3
+Processing: PETR3,VALE3,1Year,5ms,kendall,3
+Processing [24]: PETR3,VALE3,1Year,5ms,kendall,4
+Processing: PETR3,VALE3,1Year,5ms,kendall,4
+[Mon Dec  1 10:54:52 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [25]: PETR3,VALE3,1Year,5ms,kendall,5
+Processing: PETR3,VALE3,1Year,5ms,kendall,5
+Processing [26]: PETR3,VALE3,1Year,5ms,spearman,1
+[Mon Dec  1 10:59:53 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing: PETR3,VALE3,1Year,5ms,spearman,1
+Processing [27]: PETR3,VALE3,1Year,5ms,spearman,2
+Processing: PETR3,VALE3,1Year,5ms,spearman,2
+[Mon Dec  1 11:04:53 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [28]: PETR3,VALE3,1Year,5ms,spearman,3
+Processing: PETR3,VALE3,1Year,5ms,spearman,3
+[Mon Dec  1 11:09:53 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [29]: PETR3,VALE3,1Year,5ms,spearman,4
+Processing: PETR3,VALE3,1Year,5ms,spearman,4
+[Mon Dec  1 11:14:54 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [30]: PETR3,VALE3,1Year,5ms,spearman,5
+Processing: PETR3,VALE3,1Year,5ms,spearman,5
+[Mon Dec  1 11:19:54 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Processing [31]: PETR3,VALE3,1Year,10ms,pearson,1
+Processing: PETR3,VALE3,1Year,10ms,pearson,1
+[Mon Dec  1 11:24:54 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=321.1151s, saved to correlation_input_sample_737043.csv
+Processing [32]: PETR3,VALE3,1Year,10ms,pearson,2
+Processing: PETR3,VALE3,1Year,10ms,pearson,2
+[Mon Dec  1 11:29:55 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=282.6071s, saved to correlation_input_sample_737043.csv
+Processing [33]: PETR3,VALE3,1Year,10ms,pearson,3
+Processing: PETR3,VALE3,1Year,10ms,pearson,3
+[Mon Dec  1 11:34:55 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=159.5049s, saved to correlation_input_sample_737043.csv
+Processing [34]: PETR3,VALE3,1Year,10ms,pearson,4
+Processing: PETR3,VALE3,1Year,10ms,pearson,4
+[Mon Dec  1 11:39:55 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=272.6611s, saved to correlation_input_sample_737043.csv
+Processing [35]: PETR3,VALE3,1Year,10ms,pearson,5
+Processing: PETR3,VALE3,1Year,10ms,pearson,5
+Error: value too large to convert to int
+Finished: correlation=None, time=266.2117s, saved to correlation_input_sample_737043.csv
+Processing [36]: PETR3,VALE3,1Year,10ms,kendall,1
+Processing: PETR3,VALE3,1Year,10ms,kendall,1
+[Mon Dec  1 11:44:55 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=289.7236s, saved to correlation_input_sample_737043.csv
+Processing [37]: PETR3,VALE3,1Year,10ms,kendall,2
+Processing: PETR3,VALE3,1Year,10ms,kendall,2
+[Mon Dec  1 11:49:55 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=267.2150s, saved to correlation_input_sample_737043.csv
+Processing [38]: PETR3,VALE3,1Year,10ms,kendall,3
+Processing: PETR3,VALE3,1Year,10ms,kendall,3
+[Mon Dec  1 11:54:55 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=284.0364s, saved to correlation_input_sample_737043.csv
+Processing [39]: PETR3,VALE3,1Year,10ms,kendall,4
+Processing: PETR3,VALE3,1Year,10ms,kendall,4
+[Mon Dec  1 11:59:55 AM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=284.1493s, saved to correlation_input_sample_737043.csv
+Processing [40]: PETR3,VALE3,1Year,10ms,kendall,5
+Processing: PETR3,VALE3,1Year,10ms,kendall,5
+[Mon Dec  1 12:04:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=266.0060s, saved to correlation_input_sample_737043.csv
+Processing [41]: PETR3,VALE3,1Year,10ms,spearman,1
+Processing: PETR3,VALE3,1Year,10ms,spearman,1
+[Mon Dec  1 12:09:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=265.8664s, saved to correlation_input_sample_737043.csv
+Processing [42]: PETR3,VALE3,1Year,10ms,spearman,2
+Processing: PETR3,VALE3,1Year,10ms,spearman,2
+[Mon Dec  1 12:14:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=266.1173s, saved to correlation_input_sample_737043.csv
+Processing [43]: PETR3,VALE3,1Year,10ms,spearman,3
+Processing: PETR3,VALE3,1Year,10ms,spearman,3
+[Mon Dec  1 12:19:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=285.8802s, saved to correlation_input_sample_737043.csv
+Processing [44]: PETR3,VALE3,1Year,10ms,spearman,4
+Processing: PETR3,VALE3,1Year,10ms,spearman,4
+[Mon Dec  1 12:24:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=271.0122s, saved to correlation_input_sample_737043.csv
+Processing [45]: PETR3,VALE3,1Year,10ms,spearman,5
+Processing: PETR3,VALE3,1Year,10ms,spearman,5
+[Mon Dec  1 12:29:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Error: value too large to convert to int
+Finished: correlation=None, time=266.2064s, saved to correlation_input_sample_737043.csv
+Processing [46]: PETR3,VALE3,1Year,50ms,pearson,1
+Processing: PETR3,VALE3,1Year,50ms,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas pearson correlation: -0.19335306065335786
+Finished: correlation=-0.19335306065335786, time=85.7447s, saved to correlation_input_sample_737043.csv
+Processing [47]: PETR3,VALE3,1Year,50ms,pearson,2
+Processing: PETR3,VALE3,1Year,50ms,pearson,2
+[Mon Dec  1 12:34:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas pearson correlation: -0.19335306065335786
+Finished: correlation=-0.19335306065335786, time=361.4968s, saved to correlation_input_sample_737043.csv
+Processing [48]: PETR3,VALE3,1Year,50ms,pearson,3
+Processing: PETR3,VALE3,1Year,50ms,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas pearson correlation: -0.19335306065335786
+Finished: correlation=-0.19335306065335786, time=86.0307s, saved to correlation_input_sample_737043.csv
+Processing [49]: PETR3,VALE3,1Year,50ms,pearson,4
+Processing: PETR3,VALE3,1Year,50ms,pearson,4
+[Mon Dec  1 12:39:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas pearson correlation: -0.19335306065335786
+Finished: correlation=-0.19335306065335786, time=85.4328s, saved to correlation_input_sample_737043.csv
+Processing [50]: PETR3,VALE3,1Year,50ms,pearson,5
+Processing: PETR3,VALE3,1Year,50ms,pearson,5
+[Mon Dec  1 12:44:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas pearson correlation: -0.19335306065335786
+Finished: correlation=-0.19335306065335786, time=360.6456s, saved to correlation_input_sample_737043.csv
+Processing [51]: PETR3,VALE3,1Year,50ms,kendall,1
+Processing: PETR3,VALE3,1Year,50ms,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas kendall correlation: -0.0828261486021361
+Finished: correlation=-0.0828261486021361, time=89.8069s, saved to correlation_input_sample_737043.csv
+Processing [52]: PETR3,VALE3,1Year,50ms,kendall,2
+Processing: PETR3,VALE3,1Year,50ms,kendall,2
+[Mon Dec  1 12:49:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas kendall correlation: -0.0828261486021361
+Finished: correlation=-0.0828261486021361, time=382.0047s, saved to correlation_input_sample_737043.csv
+Processing [53]: PETR3,VALE3,1Year,50ms,kendall,3
+Processing: PETR3,VALE3,1Year,50ms,kendall,3
+[Mon Dec  1 12:54:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas kendall correlation: -0.0828261486021361
+Finished: correlation=-0.0828261486021361, time=86.8531s, saved to correlation_input_sample_737043.csv
+Processing [54]: PETR3,VALE3,1Year,50ms,kendall,4
+Processing: PETR3,VALE3,1Year,50ms,kendall,4
+[Mon Dec  1 12:59:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas kendall correlation: -0.0828261486021361
+Finished: correlation=-0.0828261486021361, time=383.3195s, saved to correlation_input_sample_737043.csv
+Processing [55]: PETR3,VALE3,1Year,50ms,kendall,5
+Processing: PETR3,VALE3,1Year,50ms,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas kendall correlation: -0.0828261486021361
+Finished: correlation=-0.0828261486021361, time=86.9876s, saved to correlation_input_sample_737043.csv
+Processing [56]: PETR3,VALE3,1Year,50ms,spearman,1
+Processing: PETR3,VALE3,1Year,50ms,spearman,1
+[Mon Dec  1 01:04:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+[Mon Dec  1 01:09:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas spearman correlation: -0.13515190085762926
+Finished: correlation=-0.13515190085762926, time=364.7313s, saved to correlation_input_sample_737043.csv
+Processing [57]: PETR3,VALE3,1Year,50ms,spearman,2
+Processing: PETR3,VALE3,1Year,50ms,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas spearman correlation: -0.13515190085762926
+Finished: correlation=-0.13515190085762926, time=86.9906s, saved to correlation_input_sample_737043.csv
+Processing [58]: PETR3,VALE3,1Year,50ms,spearman,3
+Processing: PETR3,VALE3,1Year,50ms,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas spearman correlation: -0.13515190085762926
+Finished: correlation=-0.13515190085762926, time=86.9410s, saved to correlation_input_sample_737043.csv
+Processing [59]: PETR3,VALE3,1Year,50ms,spearman,4
+Processing: PETR3,VALE3,1Year,50ms,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas spearman correlation: -0.13515190085762926
+Finished: correlation=-0.13515190085762926, time=87.0274s, saved to correlation_input_sample_737043.csv
+Processing [60]: PETR3,VALE3,1Year,50ms,spearman,5
+Processing: PETR3,VALE3,1Year,50ms,spearman,5
+[Mon Dec  1 01:14:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 50ms: Raw[2313747, 4355401] -> Resampled[534443812, 534443832] -> CorrMatrix[4621178]
+Pandas spearman correlation: -0.13515190085762926
+Finished: correlation=-0.13515190085762926, time=87.3256s, saved to correlation_input_sample_737043.csv
+Processing [61]: PETR3,VALE3,1Year,100ms,pearson,1
+Processing: PETR3,VALE3,1Year,100ms,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas pearson correlation: -0.19825560292607183
+Finished: correlation=-0.19825560292607183, time=44.0413s, saved to correlation_input_sample_737043.csv
+Processing [62]: PETR3,VALE3,1Year,100ms,pearson,2
+Processing: PETR3,VALE3,1Year,100ms,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas pearson correlation: -0.19825560292607183
+Finished: correlation=-0.19825560292607183, time=44.1022s, saved to correlation_input_sample_737043.csv
+Processing [63]: PETR3,VALE3,1Year,100ms,pearson,3
+Processing: PETR3,VALE3,1Year,100ms,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas pearson correlation: -0.19825560292607183
+Finished: correlation=-0.19825560292607183, time=45.5893s, saved to correlation_input_sample_737043.csv
+Processing [64]: PETR3,VALE3,1Year,100ms,pearson,4
+Processing: PETR3,VALE3,1Year,100ms,pearson,4
+[Mon Dec  1 01:19:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas pearson correlation: -0.19825560292607183
+Finished: correlation=-0.19825560292607183, time=169.6177s, saved to correlation_input_sample_737043.csv
+Processing [65]: PETR3,VALE3,1Year,100ms,pearson,5
+Processing: PETR3,VALE3,1Year,100ms,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas pearson correlation: -0.19825560292607183
+Finished: correlation=-0.19825560292607183, time=44.1527s, saved to correlation_input_sample_737043.csv
+Processing [66]: PETR3,VALE3,1Year,100ms,kendall,1
+Processing: PETR3,VALE3,1Year,100ms,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas kendall correlation: -0.08639507512779374
+Finished: correlation=-0.08639507512779374, time=45.4801s, saved to correlation_input_sample_737043.csv
+Processing [67]: PETR3,VALE3,1Year,100ms,kendall,2
+Processing: PETR3,VALE3,1Year,100ms,kendall,2
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas kendall correlation: -0.08639507512779374
+Finished: correlation=-0.08639507512779374, time=45.4957s, saved to correlation_input_sample_737043.csv
+Processing [68]: PETR3,VALE3,1Year,100ms,kendall,3
+Processing: PETR3,VALE3,1Year,100ms,kendall,3
+[Mon Dec  1 01:24:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas kendall correlation: -0.08639507512779374
+Finished: correlation=-0.08639507512779374, time=172.3735s, saved to correlation_input_sample_737043.csv
+Processing [69]: PETR3,VALE3,1Year,100ms,kendall,4
+Processing: PETR3,VALE3,1Year,100ms,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas kendall correlation: -0.08639507512779374
+Finished: correlation=-0.08639507512779374, time=45.5454s, saved to correlation_input_sample_737043.csv
+Processing [70]: PETR3,VALE3,1Year,100ms,kendall,5
+Processing: PETR3,VALE3,1Year,100ms,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas kendall correlation: -0.08639507512779374
+Finished: correlation=-0.08639507512779374, time=45.5093s, saved to correlation_input_sample_737043.csv
+Processing [71]: PETR3,VALE3,1Year,100ms,spearman,1
+Processing: PETR3,VALE3,1Year,100ms,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas spearman correlation: -0.14013314861593493
+Finished: correlation=-0.14013314861593493, time=45.4721s, saved to correlation_input_sample_737043.csv
+Processing [72]: PETR3,VALE3,1Year,100ms,spearman,2
+Processing: PETR3,VALE3,1Year,100ms,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas spearman correlation: -0.14013314861593493
+Finished: correlation=-0.14013314861593493, time=45.3725s, saved to correlation_input_sample_737043.csv
+Processing [73]: PETR3,VALE3,1Year,100ms,spearman,3
+Processing: PETR3,VALE3,1Year,100ms,spearman,3
+[Mon Dec  1 01:29:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas spearman correlation: -0.14013314861593493
+Finished: correlation=-0.14013314861593493, time=45.3105s, saved to correlation_input_sample_737043.csv
+Processing [74]: PETR3,VALE3,1Year,100ms,spearman,4
+Processing: PETR3,VALE3,1Year,100ms,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas spearman correlation: -0.14013314861593493
+Finished: correlation=-0.14013314861593493, time=45.3601s, saved to correlation_input_sample_737043.csv
+Processing [75]: PETR3,VALE3,1Year,100ms,spearman,5
+Processing: PETR3,VALE3,1Year,100ms,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 100ms: Raw[2313747, 4355401] -> Resampled[267221906, 267221917] -> CorrMatrix[4212101]
+Pandas spearman correlation: -0.14013314861593493
+Finished: correlation=-0.14013314861593493, time=45.5471s, saved to correlation_input_sample_737043.csv
+Processing [76]: PETR3,VALE3,1Year,500ms,pearson,1
+Processing: PETR3,VALE3,1Year,500ms,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas pearson correlation: -0.21077733577495153
+Finished: correlation=-0.21077733577495153, time=18.5466s, saved to correlation_input_sample_737043.csv
+Processing [77]: PETR3,VALE3,1Year,500ms,pearson,2
+Processing: PETR3,VALE3,1Year,500ms,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas pearson correlation: -0.21077733577495153
+Finished: correlation=-0.21077733577495153, time=50.2508s, saved to correlation_input_sample_737043.csv
+Processing [78]: PETR3,VALE3,1Year,500ms,pearson,3
+Processing: PETR3,VALE3,1Year,500ms,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas pearson correlation: -0.21077733577495153
+Finished: correlation=-0.21077733577495153, time=17.0265s, saved to correlation_input_sample_737043.csv
+Processing [79]: PETR3,VALE3,1Year,500ms,pearson,4
+Processing: PETR3,VALE3,1Year,500ms,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas pearson correlation: -0.21077733577495153
+Finished: correlation=-0.21077733577495153, time=17.0224s, saved to correlation_input_sample_737043.csv
+Processing [80]: PETR3,VALE3,1Year,500ms,pearson,5
+Processing: PETR3,VALE3,1Year,500ms,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas pearson correlation: -0.21077733577495153
+Finished: correlation=-0.21077733577495153, time=50.3783s, saved to correlation_input_sample_737043.csv
+Processing [81]: PETR3,VALE3,1Year,500ms,kendall,1
+Processing: PETR3,VALE3,1Year,500ms,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas kendall correlation: -0.09687715447682763
+Finished: correlation=-0.09687715447682763, time=18.2028s, saved to correlation_input_sample_737043.csv
+Processing [82]: PETR3,VALE3,1Year,500ms,kendall,2
+Processing: PETR3,VALE3,1Year,500ms,kendall,2
+[Mon Dec  1 01:34:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas kendall correlation: -0.09687715447682763
+Finished: correlation=-0.09687715447682763, time=52.1731s, saved to correlation_input_sample_737043.csv
+Processing [83]: PETR3,VALE3,1Year,500ms,kendall,3
+Processing: PETR3,VALE3,1Year,500ms,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas kendall correlation: -0.09687715447682763
+Finished: correlation=-0.09687715447682763, time=18.2750s, saved to correlation_input_sample_737043.csv
+Processing [84]: PETR3,VALE3,1Year,500ms,kendall,4
+Processing: PETR3,VALE3,1Year,500ms,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas kendall correlation: -0.09687715447682763
+Finished: correlation=-0.09687715447682763, time=18.2102s, saved to correlation_input_sample_737043.csv
+Processing [85]: PETR3,VALE3,1Year,500ms,kendall,5
+Processing: PETR3,VALE3,1Year,500ms,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas kendall correlation: -0.09687715447682763
+Finished: correlation=-0.09687715447682763, time=18.2323s, saved to correlation_input_sample_737043.csv
+Processing [86]: PETR3,VALE3,1Year,500ms,spearman,1
+Processing: PETR3,VALE3,1Year,500ms,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas spearman correlation: -0.15387187546467648
+Finished: correlation=-0.15387187546467648, time=18.4338s, saved to correlation_input_sample_737043.csv
+Processing [87]: PETR3,VALE3,1Year,500ms,spearman,2
+Processing: PETR3,VALE3,1Year,500ms,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas spearman correlation: -0.15387187546467648
+Finished: correlation=-0.15387187546467648, time=52.1354s, saved to correlation_input_sample_737043.csv
+Processing [88]: PETR3,VALE3,1Year,500ms,spearman,3
+Processing: PETR3,VALE3,1Year,500ms,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas spearman correlation: -0.15387187546467648
+Finished: correlation=-0.15387187546467648, time=18.1889s, saved to correlation_input_sample_737043.csv
+Processing [89]: PETR3,VALE3,1Year,500ms,spearman,4
+Processing: PETR3,VALE3,1Year,500ms,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas spearman correlation: -0.15387187546467648
+Finished: correlation=-0.15387187546467648, time=18.1652s, saved to correlation_input_sample_737043.csv
+Processing [90]: PETR3,VALE3,1Year,500ms,spearman,5
+Processing: PETR3,VALE3,1Year,500ms,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 500ms: Raw[2313747, 4355401] -> Resampled[53444382, 53444384] -> CorrMatrix[3013542]
+Pandas spearman correlation: -0.15387187546467648
+Finished: correlation=-0.15387187546467648, time=18.1306s, saved to correlation_input_sample_737043.csv
+Processing [91]: PETR3,VALE3,1Year,1S,pearson,1
+Processing: PETR3,VALE3,1Year,1S,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas pearson correlation: -0.2175022241463342
+Finished: correlation=-0.2175022241463342, time=34.0703s, saved to correlation_input_sample_737043.csv
+Processing [92]: PETR3,VALE3,1Year,1S,pearson,2
+Processing: PETR3,VALE3,1Year,1S,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas pearson correlation: -0.2175022241463342
+Finished: correlation=-0.2175022241463342, time=14.2797s, saved to correlation_input_sample_737043.csv
+Processing [93]: PETR3,VALE3,1Year,1S,pearson,3
+Processing: PETR3,VALE3,1Year,1S,pearson,3
+[Mon Dec  1 01:39:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas pearson correlation: -0.2175022241463342
+Finished: correlation=-0.2175022241463342, time=34.3899s, saved to correlation_input_sample_737043.csv
+Processing [94]: PETR3,VALE3,1Year,1S,pearson,4
+Processing: PETR3,VALE3,1Year,1S,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas pearson correlation: -0.2175022241463342
+Finished: correlation=-0.2175022241463342, time=13.3658s, saved to correlation_input_sample_737043.csv
+Processing [95]: PETR3,VALE3,1Year,1S,pearson,5
+Processing: PETR3,VALE3,1Year,1S,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas pearson correlation: -0.2175022241463342
+Finished: correlation=-0.2175022241463342, time=15.2101s, saved to correlation_input_sample_737043.csv
+Processing [96]: PETR3,VALE3,1Year,1S,kendall,1
+Processing: PETR3,VALE3,1Year,1S,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas kendall correlation: -0.10163488978168331
+Finished: correlation=-0.10163488978168331, time=36.2283s, saved to correlation_input_sample_737043.csv
+Processing [97]: PETR3,VALE3,1Year,1S,kendall,2
+Processing: PETR3,VALE3,1Year,1S,kendall,2
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas kendall correlation: -0.10163488978168331
+Finished: correlation=-0.10163488978168331, time=14.3648s, saved to correlation_input_sample_737043.csv
+Processing [98]: PETR3,VALE3,1Year,1S,kendall,3
+Processing: PETR3,VALE3,1Year,1S,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas kendall correlation: -0.10163488978168331
+Finished: correlation=-0.10163488978168331, time=14.4436s, saved to correlation_input_sample_737043.csv
+Processing [99]: PETR3,VALE3,1Year,1S,kendall,4
+Processing: PETR3,VALE3,1Year,1S,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas kendall correlation: -0.10163488978168331
+Finished: correlation=-0.10163488978168331, time=36.4520s, saved to correlation_input_sample_737043.csv
+Processing [100]: PETR3,VALE3,1Year,1S,kendall,5
+Processing: PETR3,VALE3,1Year,1S,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas kendall correlation: -0.10163488978168331
+Finished: correlation=-0.10163488978168331, time=14.4662s, saved to correlation_input_sample_737043.csv
+Processing [101]: PETR3,VALE3,1Year,1S,spearman,1
+Processing: PETR3,VALE3,1Year,1S,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas spearman correlation: -0.16057061479812118
+Finished: correlation=-0.16057061479812118, time=36.4792s, saved to correlation_input_sample_737043.csv
+Processing [102]: PETR3,VALE3,1Year,1S,spearman,2
+Processing: PETR3,VALE3,1Year,1S,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas spearman correlation: -0.16057061479812118
+Finished: correlation=-0.16057061479812118, time=14.2694s, saved to correlation_input_sample_737043.csv
+Processing [103]: PETR3,VALE3,1Year,1S,spearman,3
+Processing: PETR3,VALE3,1Year,1S,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas spearman correlation: -0.16057061479812118
+Finished: correlation=-0.16057061479812118, time=36.1056s, saved to correlation_input_sample_737043.csv
+Processing [104]: PETR3,VALE3,1Year,1S,spearman,4
+Processing: PETR3,VALE3,1Year,1S,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas spearman correlation: -0.16057061479812118
+Finished: correlation=-0.16057061479812118, time=14.2719s, saved to correlation_input_sample_737043.csv
+Processing [105]: PETR3,VALE3,1Year,1S,spearman,5
+Processing: PETR3,VALE3,1Year,1S,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 1S: Raw[2313747, 4355401] -> Resampled[26722192, 26722193] -> CorrMatrix[2442795]
+Pandas spearman correlation: -0.16057061479812118
+Finished: correlation=-0.16057061479812118, time=14.4092s, saved to correlation_input_sample_737043.csv
+Processing [106]: PETR3,VALE3,1Year,30S,pearson,1
+Processing: PETR3,VALE3,1Year,30S,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas pearson correlation: -0.2182331735801477
+Finished: correlation=-0.2182331735801477, time=9.5978s, saved to correlation_input_sample_737043.csv
+Processing [107]: PETR3,VALE3,1Year,30S,pearson,2
+Processing: PETR3,VALE3,1Year,30S,pearson,2
+[Mon Dec  1 01:44:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas pearson correlation: -0.2182331735801477
+Finished: correlation=-0.2182331735801477, time=17.1955s, saved to correlation_input_sample_737043.csv
+Processing [108]: PETR3,VALE3,1Year,30S,pearson,3
+Processing: PETR3,VALE3,1Year,30S,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas pearson correlation: -0.2182331735801477
+Finished: correlation=-0.2182331735801477, time=9.5462s, saved to correlation_input_sample_737043.csv
+Processing [109]: PETR3,VALE3,1Year,30S,pearson,4
+Processing: PETR3,VALE3,1Year,30S,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas pearson correlation: -0.2182331735801477
+Finished: correlation=-0.2182331735801477, time=9.5288s, saved to correlation_input_sample_737043.csv
+Processing [110]: PETR3,VALE3,1Year,30S,pearson,5
+Processing: PETR3,VALE3,1Year,30S,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas pearson correlation: -0.2182331735801477
+Finished: correlation=-0.2182331735801477, time=9.5646s, saved to correlation_input_sample_737043.csv
+Processing [111]: PETR3,VALE3,1Year,30S,kendall,1
+Processing: PETR3,VALE3,1Year,30S,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas kendall correlation: -0.10247784398585408
+Finished: correlation=-0.10247784398585408, time=18.1640s, saved to correlation_input_sample_737043.csv
+Processing [112]: PETR3,VALE3,1Year,30S,kendall,2
+Processing: PETR3,VALE3,1Year,30S,kendall,2
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas kendall correlation: -0.10247784398585408
+Finished: correlation=-0.10247784398585408, time=10.1211s, saved to correlation_input_sample_737043.csv
+Processing [113]: PETR3,VALE3,1Year,30S,kendall,3
+Processing: PETR3,VALE3,1Year,30S,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas kendall correlation: -0.10247784398585408
+Finished: correlation=-0.10247784398585408, time=10.2061s, saved to correlation_input_sample_737043.csv
+Processing [114]: PETR3,VALE3,1Year,30S,kendall,4
+Processing: PETR3,VALE3,1Year,30S,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas kendall correlation: -0.10247784398585408
+Finished: correlation=-0.10247784398585408, time=18.1103s, saved to correlation_input_sample_737043.csv
+Processing [115]: PETR3,VALE3,1Year,30S,kendall,5
+Processing: PETR3,VALE3,1Year,30S,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas kendall correlation: -0.10247784398585408
+Finished: correlation=-0.10247784398585408, time=10.3304s, saved to correlation_input_sample_737043.csv
+Processing [116]: PETR3,VALE3,1Year,30S,spearman,1
+Processing: PETR3,VALE3,1Year,30S,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas spearman correlation: -0.16091140991028105
+Finished: correlation=-0.16091140991028105, time=10.1737s, saved to correlation_input_sample_737043.csv
+Processing [117]: PETR3,VALE3,1Year,30S,spearman,2
+Processing: PETR3,VALE3,1Year,30S,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas spearman correlation: -0.16091140991028105
+Finished: correlation=-0.16091140991028105, time=10.1682s, saved to correlation_input_sample_737043.csv
+Processing [118]: PETR3,VALE3,1Year,30S,spearman,3
+Processing: PETR3,VALE3,1Year,30S,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas spearman correlation: -0.16091140991028105
+Finished: correlation=-0.16091140991028105, time=10.1028s, saved to correlation_input_sample_737043.csv
+Processing [119]: PETR3,VALE3,1Year,30S,spearman,4
+Processing: PETR3,VALE3,1Year,30S,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas spearman correlation: -0.16091140991028105
+Finished: correlation=-0.16091140991028105, time=10.1662s, saved to correlation_input_sample_737043.csv
+Processing [120]: PETR3,VALE3,1Year,30S,spearman,5
+Processing: PETR3,VALE3,1Year,30S,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 30S: Raw[2313747, 4355401] -> Resampled[890740, 890740] -> CorrMatrix[177511]
+Pandas spearman correlation: -0.16091140991028105
+Finished: correlation=-0.16091140991028105, time=10.4295s, saved to correlation_input_sample_737043.csv
+Processing [121]: PETR3,VALE3,1Year,1T,pearson,1
+Processing: PETR3,VALE3,1Year,1T,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas pearson correlation: -0.2184796157865431
+Finished: correlation=-0.2184796157865431, time=9.5341s, saved to correlation_input_sample_737043.csv
+Processing [122]: PETR3,VALE3,1Year,1T,pearson,2
+Processing: PETR3,VALE3,1Year,1T,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas pearson correlation: -0.2184796157865431
+Finished: correlation=-0.2184796157865431, time=9.5007s, saved to correlation_input_sample_737043.csv
+Processing [123]: PETR3,VALE3,1Year,1T,pearson,3
+Processing: PETR3,VALE3,1Year,1T,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas pearson correlation: -0.2184796157865431
+Finished: correlation=-0.2184796157865431, time=9.7348s, saved to correlation_input_sample_737043.csv
+Processing [124]: PETR3,VALE3,1Year,1T,pearson,4
+Processing: PETR3,VALE3,1Year,1T,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas pearson correlation: -0.2184796157865431
+Finished: correlation=-0.2184796157865431, time=9.5084s, saved to correlation_input_sample_737043.csv
+Processing [125]: PETR3,VALE3,1Year,1T,pearson,5
+Processing: PETR3,VALE3,1Year,1T,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas pearson correlation: -0.2184796157865431
+Finished: correlation=-0.2184796157865431, time=17.2268s, saved to correlation_input_sample_737043.csv
+Processing [126]: PETR3,VALE3,1Year,1T,kendall,1
+Processing: PETR3,VALE3,1Year,1T,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas kendall correlation: -0.10279072635875894
+Finished: correlation=-0.10279072635875894, time=10.0795s, saved to correlation_input_sample_737043.csv
+Processing [127]: PETR3,VALE3,1Year,1T,kendall,2
+Processing: PETR3,VALE3,1Year,1T,kendall,2
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas kendall correlation: -0.10279072635875894
+Finished: correlation=-0.10279072635875894, time=18.2998s, saved to correlation_input_sample_737043.csv
+Processing [128]: PETR3,VALE3,1Year,1T,kendall,3
+Processing: PETR3,VALE3,1Year,1T,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas kendall correlation: -0.10279072635875894
+Finished: correlation=-0.10279072635875894, time=10.1229s, saved to correlation_input_sample_737043.csv
+Processing [129]: PETR3,VALE3,1Year,1T,kendall,4
+Processing: PETR3,VALE3,1Year,1T,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas kendall correlation: -0.10279072635875894
+Finished: correlation=-0.10279072635875894, time=10.0848s, saved to correlation_input_sample_737043.csv
+Processing [130]: PETR3,VALE3,1Year,1T,kendall,5
+Processing: PETR3,VALE3,1Year,1T,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas kendall correlation: -0.10279072635875894
+Finished: correlation=-0.10279072635875894, time=10.0894s, saved to correlation_input_sample_737043.csv
+Processing [131]: PETR3,VALE3,1Year,1T,spearman,1
+Processing: PETR3,VALE3,1Year,1T,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas spearman correlation: -0.16132070444205907
+Finished: correlation=-0.16132070444205907, time=10.0453s, saved to correlation_input_sample_737043.csv
+Processing [132]: PETR3,VALE3,1Year,1T,spearman,2
+Processing: PETR3,VALE3,1Year,1T,spearman,2
+[Mon Dec  1 01:49:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas spearman correlation: -0.16132070444205907
+Finished: correlation=-0.16132070444205907, time=10.1406s, saved to correlation_input_sample_737043.csv
+Processing [133]: PETR3,VALE3,1Year,1T,spearman,3
+Processing: PETR3,VALE3,1Year,1T,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas spearman correlation: -0.16132070444205907
+Finished: correlation=-0.16132070444205907, time=18.0115s, saved to correlation_input_sample_737043.csv
+Processing [134]: PETR3,VALE3,1Year,1T,spearman,4
+Processing: PETR3,VALE3,1Year,1T,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas spearman correlation: -0.16132070444205907
+Finished: correlation=-0.16132070444205907, time=10.1114s, saved to correlation_input_sample_737043.csv
+Processing [135]: PETR3,VALE3,1Year,1T,spearman,5
+Processing: PETR3,VALE3,1Year,1T,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 1T: Raw[2313747, 4355401] -> Resampled[445370, 445370] -> CorrMatrix[88891]
+Pandas spearman correlation: -0.16132070444205907
+Finished: correlation=-0.16132070444205907, time=10.1180s, saved to correlation_input_sample_737043.csv
+Processing [136]: PETR3,VALE3,1Year,5T,pearson,1
+Processing: PETR3,VALE3,1Year,5T,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas pearson correlation: -0.2183490621543814
+Finished: correlation=-0.2183490621543814, time=9.4600s, saved to correlation_input_sample_737043.csv
+Processing [137]: PETR3,VALE3,1Year,5T,pearson,2
+Processing: PETR3,VALE3,1Year,5T,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas pearson correlation: -0.2183490621543814
+Finished: correlation=-0.2183490621543814, time=17.1375s, saved to correlation_input_sample_737043.csv
+Processing [138]: PETR3,VALE3,1Year,5T,pearson,3
+Processing: PETR3,VALE3,1Year,5T,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas pearson correlation: -0.2183490621543814
+Finished: correlation=-0.2183490621543814, time=9.4373s, saved to correlation_input_sample_737043.csv
+Processing [139]: PETR3,VALE3,1Year,5T,pearson,4
+Processing: PETR3,VALE3,1Year,5T,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas pearson correlation: -0.2183490621543814
+Finished: correlation=-0.2183490621543814, time=9.4958s, saved to correlation_input_sample_737043.csv
+Processing [140]: PETR3,VALE3,1Year,5T,pearson,5
+Processing: PETR3,VALE3,1Year,5T,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas pearson correlation: -0.2183490621543814
+Finished: correlation=-0.2183490621543814, time=16.9975s, saved to correlation_input_sample_737043.csv
+Processing [141]: PETR3,VALE3,1Year,5T,kendall,1
+Processing: PETR3,VALE3,1Year,5T,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas kendall correlation: -0.10269175183270517
+Finished: correlation=-0.10269175183270517, time=10.0032s, saved to correlation_input_sample_737043.csv
+Processing [142]: PETR3,VALE3,1Year,5T,kendall,2
+Processing: PETR3,VALE3,1Year,5T,kendall,2
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas kendall correlation: -0.10269175183270517
+Finished: correlation=-0.10269175183270517, time=10.0523s, saved to correlation_input_sample_737043.csv
+Processing [143]: PETR3,VALE3,1Year,5T,kendall,3
+Processing: PETR3,VALE3,1Year,5T,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas kendall correlation: -0.10269175183270517
+Finished: correlation=-0.10269175183270517, time=10.0664s, saved to correlation_input_sample_737043.csv
+Processing [144]: PETR3,VALE3,1Year,5T,kendall,4
+Processing: PETR3,VALE3,1Year,5T,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas kendall correlation: -0.10269175183270517
+Finished: correlation=-0.10269175183270517, time=10.0141s, saved to correlation_input_sample_737043.csv
+Processing [145]: PETR3,VALE3,1Year,5T,kendall,5
+Processing: PETR3,VALE3,1Year,5T,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas kendall correlation: -0.10269175183270517
+Finished: correlation=-0.10269175183270517, time=10.3639s, saved to correlation_input_sample_737043.csv
+Processing [146]: PETR3,VALE3,1Year,5T,spearman,1
+Processing: PETR3,VALE3,1Year,5T,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas spearman correlation: -0.16116365228359233
+Finished: correlation=-0.16116365228359233, time=10.1532s, saved to correlation_input_sample_737043.csv
+Processing [147]: PETR3,VALE3,1Year,5T,spearman,2
+Processing: PETR3,VALE3,1Year,5T,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas spearman correlation: -0.16116365228359233
+Finished: correlation=-0.16116365228359233, time=10.0002s, saved to correlation_input_sample_737043.csv
+Processing [148]: PETR3,VALE3,1Year,5T,spearman,3
+Processing: PETR3,VALE3,1Year,5T,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas spearman correlation: -0.16116365228359233
+Finished: correlation=-0.16116365228359233, time=12.9135s, saved to correlation_input_sample_737043.csv
+Processing [149]: PETR3,VALE3,1Year,5T,spearman,4
+Processing: PETR3,VALE3,1Year,5T,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas spearman correlation: -0.16116365228359233
+Finished: correlation=-0.16116365228359233, time=17.5177s, saved to correlation_input_sample_737043.csv
+Processing [150]: PETR3,VALE3,1Year,5T,spearman,5
+Processing: PETR3,VALE3,1Year,5T,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 5T: Raw[2313747, 4355401] -> Resampled[89074, 89074] -> CorrMatrix[17898]
+Pandas spearman correlation: -0.16116365228359233
+Finished: correlation=-0.16116365228359233, time=10.0619s, saved to correlation_input_sample_737043.csv
+Processing [151]: PETR3,VALE3,1Year,30T,pearson,1
+Processing: PETR3,VALE3,1Year,30T,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas pearson correlation: -0.216747902974135
+Finished: correlation=-0.216747902974135, time=11.2058s, saved to correlation_input_sample_737043.csv
+Processing [152]: PETR3,VALE3,1Year,30T,pearson,2
+Processing: PETR3,VALE3,1Year,30T,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas pearson correlation: -0.216747902974135
+Finished: correlation=-0.216747902974135, time=16.9551s, saved to correlation_input_sample_737043.csv
+Processing [153]: PETR3,VALE3,1Year,30T,pearson,3
+Processing: PETR3,VALE3,1Year,30T,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas pearson correlation: -0.216747902974135
+Finished: correlation=-0.216747902974135, time=9.4757s, saved to correlation_input_sample_737043.csv
+Processing [154]: PETR3,VALE3,1Year,30T,pearson,4
+Processing: PETR3,VALE3,1Year,30T,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas pearson correlation: -0.216747902974135
+Finished: correlation=-0.216747902974135, time=10.0031s, saved to correlation_input_sample_737043.csv
+Processing [155]: PETR3,VALE3,1Year,30T,pearson,5
+Processing: PETR3,VALE3,1Year,30T,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas pearson correlation: -0.216747902974135
+Finished: correlation=-0.216747902974135, time=9.4668s, saved to correlation_input_sample_737043.csv
+Processing [156]: PETR3,VALE3,1Year,30T,kendall,1
+Processing: PETR3,VALE3,1Year,30T,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas kendall correlation: -0.10160977085460932
+Finished: correlation=-0.10160977085460932, time=10.0589s, saved to correlation_input_sample_737043.csv
+Processing [157]: PETR3,VALE3,1Year,30T,kendall,2
+Processing: PETR3,VALE3,1Year,30T,kendall,2
+[Mon Dec  1 01:54:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas kendall correlation: -0.10160977085460932
+Finished: correlation=-0.10160977085460932, time=17.5188s, saved to correlation_input_sample_737043.csv
+Processing [158]: PETR3,VALE3,1Year,30T,kendall,3
+Processing: PETR3,VALE3,1Year,30T,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas kendall correlation: -0.10160977085460932
+Finished: correlation=-0.10160977085460932, time=10.0526s, saved to correlation_input_sample_737043.csv
+Processing [159]: PETR3,VALE3,1Year,30T,kendall,4
+Processing: PETR3,VALE3,1Year,30T,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas kendall correlation: -0.10160977085460932
+Finished: correlation=-0.10160977085460932, time=17.6384s, saved to correlation_input_sample_737043.csv
+Processing [160]: PETR3,VALE3,1Year,30T,kendall,5
+Processing: PETR3,VALE3,1Year,30T,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas kendall correlation: -0.10160977085460932
+Finished: correlation=-0.10160977085460932, time=10.1097s, saved to correlation_input_sample_737043.csv
+Processing [161]: PETR3,VALE3,1Year,30T,spearman,1
+Processing: PETR3,VALE3,1Year,30T,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas spearman correlation: -0.1596226668261062
+Finished: correlation=-0.1596226668261062, time=10.0747s, saved to correlation_input_sample_737043.csv
+Processing [162]: PETR3,VALE3,1Year,30T,spearman,2
+Processing: PETR3,VALE3,1Year,30T,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas spearman correlation: -0.1596226668261062
+Finished: correlation=-0.1596226668261062, time=11.2860s, saved to correlation_input_sample_737043.csv
+Processing [163]: PETR3,VALE3,1Year,30T,spearman,3
+Processing: PETR3,VALE3,1Year,30T,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas spearman correlation: -0.1596226668261062
+Finished: correlation=-0.1596226668261062, time=17.5069s, saved to correlation_input_sample_737043.csv
+Processing [164]: PETR3,VALE3,1Year,30T,spearman,4
+Processing: PETR3,VALE3,1Year,30T,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas spearman correlation: -0.1596226668261062
+Finished: correlation=-0.1596226668261062, time=10.3474s, saved to correlation_input_sample_737043.csv
+Processing [165]: PETR3,VALE3,1Year,30T,spearman,5
+Processing: PETR3,VALE3,1Year,30T,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 30T: Raw[2313747, 4355401] -> Resampled[14846, 14846] -> CorrMatrix[3017]
+Pandas spearman correlation: -0.1596226668261062
+Finished: correlation=-0.1596226668261062, time=10.0737s, saved to correlation_input_sample_737043.csv
+Processing [166]: PETR3,VALE3,1Year,1H,pearson,1
+Processing: PETR3,VALE3,1Year,1H,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas pearson correlation: -0.21635160196842018
+Finished: correlation=-0.21635160196842018, time=16.9959s, saved to correlation_input_sample_737043.csv
+Processing [167]: PETR3,VALE3,1Year,1H,pearson,2
+Processing: PETR3,VALE3,1Year,1H,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas pearson correlation: -0.21635160196842018
+Finished: correlation=-0.21635160196842018, time=9.5132s, saved to correlation_input_sample_737043.csv
+Processing [168]: PETR3,VALE3,1Year,1H,pearson,3
+Processing: PETR3,VALE3,1Year,1H,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas pearson correlation: -0.21635160196842018
+Finished: correlation=-0.21635160196842018, time=9.5216s, saved to correlation_input_sample_737043.csv
+Processing [169]: PETR3,VALE3,1Year,1H,pearson,4
+Processing: PETR3,VALE3,1Year,1H,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas pearson correlation: -0.21635160196842018
+Finished: correlation=-0.21635160196842018, time=9.4368s, saved to correlation_input_sample_737043.csv
+Processing [170]: PETR3,VALE3,1Year,1H,pearson,5
+Processing: PETR3,VALE3,1Year,1H,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas pearson correlation: -0.21635160196842018
+Finished: correlation=-0.21635160196842018, time=9.5094s, saved to correlation_input_sample_737043.csv
+Processing [171]: PETR3,VALE3,1Year,1H,kendall,1
+Processing: PETR3,VALE3,1Year,1H,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas kendall correlation: -0.10177540446079557
+Finished: correlation=-0.10177540446079557, time=17.6050s, saved to correlation_input_sample_737043.csv
+Processing [172]: PETR3,VALE3,1Year,1H,kendall,2
+Processing: PETR3,VALE3,1Year,1H,kendall,2
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas kendall correlation: -0.10177540446079557
+Finished: correlation=-0.10177540446079557, time=10.0064s, saved to correlation_input_sample_737043.csv
+Processing [173]: PETR3,VALE3,1Year,1H,kendall,3
+Processing: PETR3,VALE3,1Year,1H,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas kendall correlation: -0.10177540446079557
+Finished: correlation=-0.10177540446079557, time=11.2021s, saved to correlation_input_sample_737043.csv
+Processing [174]: PETR3,VALE3,1Year,1H,kendall,4
+Processing: PETR3,VALE3,1Year,1H,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas kendall correlation: -0.10177540446079557
+Finished: correlation=-0.10177540446079557, time=17.6099s, saved to correlation_input_sample_737043.csv
+Processing [175]: PETR3,VALE3,1Year,1H,kendall,5
+Processing: PETR3,VALE3,1Year,1H,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas kendall correlation: -0.10177540446079557
+Finished: correlation=-0.10177540446079557, time=10.0805s, saved to correlation_input_sample_737043.csv
+Processing [176]: PETR3,VALE3,1Year,1H,spearman,1
+Processing: PETR3,VALE3,1Year,1H,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas spearman correlation: -0.15994184467185454
+Finished: correlation=-0.15994184467185454, time=10.1778s, saved to correlation_input_sample_737043.csv
+Processing [177]: PETR3,VALE3,1Year,1H,spearman,2
+Processing: PETR3,VALE3,1Year,1H,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas spearman correlation: -0.15994184467185454
+Finished: correlation=-0.15994184467185454, time=10.0416s, saved to correlation_input_sample_737043.csv
+Processing [178]: PETR3,VALE3,1Year,1H,spearman,3
+Processing: PETR3,VALE3,1Year,1H,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas spearman correlation: -0.15994184467185454
+Finished: correlation=-0.15994184467185454, time=10.0144s, saved to correlation_input_sample_737043.csv
+Processing [179]: PETR3,VALE3,1Year,1H,spearman,4
+Processing: PETR3,VALE3,1Year,1H,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas spearman correlation: -0.15994184467185454
+Finished: correlation=-0.15994184467185454, time=18.6308s, saved to correlation_input_sample_737043.csv
+Processing [180]: PETR3,VALE3,1Year,1H,spearman,5
+Processing: PETR3,VALE3,1Year,1H,spearman,5
+[Mon Dec  1 01:59:55 PM -03 2025] Backup created: correlation_input_sample_737043_backup.csv
+Remaining NaNs after fill: 0
+Metrics for 1H: Raw[2313747, 4355401] -> Resampled[7423, 7423] -> CorrMatrix[1509]
+Pandas spearman correlation: -0.15994184467185454
+Finished: correlation=-0.15994184467185454, time=9.9984s, saved to correlation_input_sample_737043.csv
+Processing [181]: PETR3,VALE3,1Year,1D,pearson,1
+Processing: PETR3,VALE3,1Year,1D,pearson,1
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas pearson correlation: -0.21633841616851174
+Finished: correlation=-0.21633841616851174, time=9.4603s, saved to correlation_input_sample_737043.csv
+Processing [182]: PETR3,VALE3,1Year,1D,pearson,2
+Processing: PETR3,VALE3,1Year,1D,pearson,2
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas pearson correlation: -0.21633841616851174
+Finished: correlation=-0.21633841616851174, time=9.4634s, saved to correlation_input_sample_737043.csv
+Processing [183]: PETR3,VALE3,1Year,1D,pearson,3
+Processing: PETR3,VALE3,1Year,1D,pearson,3
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas pearson correlation: -0.21633841616851174
+Finished: correlation=-0.21633841616851174, time=9.4520s, saved to correlation_input_sample_737043.csv
+Processing [184]: PETR3,VALE3,1Year,1D,pearson,4
+Processing: PETR3,VALE3,1Year,1D,pearson,4
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas pearson correlation: -0.21633841616851174
+Finished: correlation=-0.21633841616851174, time=9.4295s, saved to correlation_input_sample_737043.csv
+Processing [185]: PETR3,VALE3,1Year,1D,pearson,5
+Processing: PETR3,VALE3,1Year,1D,pearson,5
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas pearson correlation: -0.21633841616851174
+Finished: correlation=-0.21633841616851174, time=10.2108s, saved to correlation_input_sample_737043.csv
+Processing [186]: PETR3,VALE3,1Year,1D,kendall,1
+Processing: PETR3,VALE3,1Year,1D,kendall,1
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas kendall correlation: -0.10106933434714428
+Finished: correlation=-0.10106933434714428, time=10.1215s, saved to correlation_input_sample_737043.csv
+Processing [187]: PETR3,VALE3,1Year,1D,kendall,2
+Processing: PETR3,VALE3,1Year,1D,kendall,2
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas kendall correlation: -0.10106933434714428
+Finished: correlation=-0.10106933434714428, time=11.9538s, saved to correlation_input_sample_737043.csv
+Processing [188]: PETR3,VALE3,1Year,1D,kendall,3
+Processing: PETR3,VALE3,1Year,1D,kendall,3
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas kendall correlation: -0.10106933434714428
+Finished: correlation=-0.10106933434714428, time=12.3679s, saved to correlation_input_sample_737043.csv
+Processing [189]: PETR3,VALE3,1Year,1D,kendall,4
+Processing: PETR3,VALE3,1Year,1D,kendall,4
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas kendall correlation: -0.10106933434714428
+Finished: correlation=-0.10106933434714428, time=10.0563s, saved to correlation_input_sample_737043.csv
+Processing [190]: PETR3,VALE3,1Year,1D,kendall,5
+Processing: PETR3,VALE3,1Year,1D,kendall,5
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas kendall correlation: -0.10106933434714428
+Finished: correlation=-0.10106933434714428, time=20.9669s, saved to correlation_input_sample_737043.csv
+Processing [191]: PETR3,VALE3,1Year,1D,spearman,1
+Processing: PETR3,VALE3,1Year,1D,spearman,1
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas spearman correlation: -0.16094767107125063
+Finished: correlation=-0.16094767107125063, time=10.6947s, saved to correlation_input_sample_737043.csv
+Processing [192]: PETR3,VALE3,1Year,1D,spearman,2
+Processing: PETR3,VALE3,1Year,1D,spearman,2
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas spearman correlation: -0.16094767107125063
+Finished: correlation=-0.16094767107125063, time=10.0581s, saved to correlation_input_sample_737043.csv
+Processing [193]: PETR3,VALE3,1Year,1D,spearman,3
+Processing: PETR3,VALE3,1Year,1D,spearman,3
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas spearman correlation: -0.16094767107125063
+Finished: correlation=-0.16094767107125063, time=10.0619s, saved to correlation_input_sample_737043.csv
+Processing [194]: PETR3,VALE3,1Year,1D,spearman,4
+Processing: PETR3,VALE3,1Year,1D,spearman,4
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas spearman correlation: -0.16094767107125063
+Finished: correlation=-0.16094767107125063, time=10.0402s, saved to correlation_input_sample_737043.csv
+Processing [195]: PETR3,VALE3,1Year,1D,spearman,5
+Processing: PETR3,VALE3,1Year,1D,spearman,5
+Remaining NaNs after fill: 0
+Metrics for 1D: Raw[2313747, 4355401] -> Resampled[222, 222] -> CorrMatrix[216]
+Pandas spearman correlation: -0.16094767107125063
+Finished: correlation=-0.16094767107125063, time=10.0567s, saved to correlation_input_sample_737043.csv
+Job Completed. Processed 195 lines.
+== Container finished running ==
+== Copying final results back to HOME ==
+== Job completed successfully ==
